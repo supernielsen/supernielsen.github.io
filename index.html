@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portefølje | Projektleder & BA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a; /* Mørk navy - professionel */
+            --accent: #3b82f6;  /* Klar blå - teknologi/tillid */
+            --text: #334155;    /* Mørkegrå tekst */
+            --bg: #f8fafc;      /* Meget lys grå baggrund */
+            --card-bg: #ffffff;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--bg);
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 { color: var(--primary); line-height: 1.2; }
+        
+        /* Hero Section */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+
+        header h1 { color: white; font-size: 2.5rem; margin-bottom: 10px; }
+        header .title { color: var(--accent); font-weight: 600; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; }
+        header .tagline { margin-top: 20px; font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto; font-style: italic; }
+
+        /* Social Links */
+        .social-links { margin-top: 30px; }
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s;
+            margin: 0 5px;
+        }
+        .btn:hover { background: #2563eb; }
+        .btn-outline { background: transparent; border: 1px solid rgba(255,255,255,0.3); }
+        .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+        /* Sections */
+        section { padding: 60px 0; }
+        
+        .section-title {
+            font-size: 1.8rem;
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+            margin-bottom: 40px;
+            padding-bottom: 5px;
+        }
+
+        /* About */
+        .about-content { font-size: 1.1rem; }
+        .about-content p { margin-bottom: 20px; }
+
+        /* Skills Tags */
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+        .skill-tag {
+            background: #e2e8f0;
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        .skill-tag:hover { background: var(--accent); color: white; cursor: default; transition: 0.3s; }
+
+        /* Experience Timeline */
+        .timeline { position: relative; border-left: 3px solid #e2e8f0; margin-left: 20px; padding-left: 30px; }
+        .timeline-item { margin-bottom: 40px; position: relative; }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -41px; /* Adjust based on border and padding */
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 4px solid white;
+        }
+        
+        .job-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .job-header { display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 10px; align-items: baseline; }
+        .job-role { font-size: 1.2rem; font-weight: 700; color: var(--primary); }
+        .job-company { font-weight: 600; color: var(--accent); }
+        .job-date { font-size: 0.9rem; color: #64748b; font-style: italic; }
+        .job-desc ul { list-style-position: inside; margin-top: 15px; }
+        .job-desc li { margin-bottom: 8px; color: #475569; }
+
+        /* Education */
+        .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .edu-card { background: white; padding: 20px; border-radius: 8px; border-left: 4px solid var(--accent); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .edu-school { font-weight: 700; display: block; margin-bottom: 5px; }
+        .edu-degree { color: #64748b; font-size: 0.95rem; }
+        .edu-year { font-size: 0.85rem; color: #94a3b8; margin-top: 5px; display: block; }
+
+        /* Footer */
+        footer { text-align: center; padding: 40px 0; color: #64748b; font-size: 0.9rem; border-top: 1px solid #e2e8f0; margin-top: 40px; }
+        
+        @media (max-width: 600px) {
+            header h1 { font-size: 2rem; }
+            .job-header { flex-direction: column; }
+            .job-date { margin-top: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>[Patrick Mosskov Nielsen]</h1> 
+            <div class="title">Projektleder & Test Manager | Business Analyst</div>
+            <p class="tagline">"Fra værkstedsgulvet til maskinrummet i komplekse IT-projekter. Jeg ser løsninger, før de bliver til problemer."</p>
+            
+            <div class="social-links">
+                <a href="mailto:supernielsen@mensa.dk" class="btn">Kontakt Mig</a>
+                <a href="https://www.linkedin.com/in/patrick-mosskov-nielsen-3652662a3/" target="_blank" class="btn btn-outline">LinkedIn</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Om Mig</h2>
+            <div class="about-content">
+                <p>Min karriere har bevæget sig fra værkstedsgulvet til maskinrummet i komplekse forretnings- og IT-projekter. Den røde tråd: En dyb teknisk forståelse og et naturligt talent for at se mønstre og løsninger, før de bliver til problemer.</p>
+                <p>Med 8 år i Motorstyrelsen som specialist og procesejer har jeg en tung domæneekspertise inden for motorområdet. Jeg er vant til at tage ejerskab for komplicerede sagsområder, være drivkraft bag store projekter og optimere de processer, der sikrer driften.</p>
+                <p>I dag hos AutoIT er min kernerolle som Business Analyst at være det afgørende bindeled mellem både branchen samt Motorstyrelsens forretningsbehov og den tekniske udvikling. Mit fokus er at sikre en leverance af højeste kvalitet, fra den indledende analyse til den endelige drift.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" style="background-color: white;">
+        <div class="container">
+            <h2 class="section-title">Kernekompetencer</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">Projektledelse</span>
+                <span class="skill-tag">Test Management</span>
+                <span class="skill-tag">Udbud & Transition</span>
+                <span class="skill-tag">Business Analysis</span>
+                <span class="skill-tag">Procesoptimering</span>
+                <span class="skill-tag">Driftstyring</span>
+                <span class="skill-tag">Datakvalitet</span>
+                <span class="skill-tag">Domæneviden (Motor)</span>
+                <span class="skill-tag">Interessentstyring</span>
+                <span class="skill-tag">Procesmodellering</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Erfaring</h2>
+            <div class="timeline">
+                
+                <div class="timeline-item">
+                    <div class="job-card">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-role">Projektleder & Test Manager | BA</div>
+                                <div class="job-company">Auto IT</div>
+                            </div>
+                            <div class="job-date">Apr. 2024 - I dag</div>
+                        </div>
+                        <div class="job-desc">
+                            <ul>
+                                <li>Aktuelt projektleder og test manager for et centralt transitionsprojekt i forlængelse af et vundet udbud.</li>
+                                <li>Sikrer leverance af højeste kvalitet fra indledende forretningsanalyse til endelig drift.</li>
+                                <li>Fungerer som bindeled mellem branchen, Motorstyrelsens behov og den tekniske udvikling.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-card">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-role">Procesejer</div>
+                                <div class="job-company">Motorstyrelsen</div>
+                            </div>
+                            <div class="job-date">2022 - 2024</div>
+                        </div>
+                        <div class="job-desc">
+                            <ul>
+                                <li>Drivkraft bag analyseprojekter og udbedring af fejl i motorregisteret.</li>
+                                <li>Udviklede og implementerede centrale vurderingsskemaer som fundament for semiautomatiske løsninger.</li>
+                                <li>Optimerede processer for automatisering af fejlrettelser og afgiftsberegning.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-card">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-role">Værdifastsætter</div>
+                                <div class="job-company">Motorstyrelsen</div>
+                            </div>
+                            <div class="job-date">2016 - 2021</div>
+                        </div>
+                        <div class="job-desc">
+                            <ul>
+                                <li>Fuld fagligt ansvar for ID-tab (konstruktivt ændrede køretøjer).</li>
+                                <li>Teknisk specialist i den daglige driftstyring.</li>
+                                <li>Deltog i tværgående projekter og udvikling af procesdiagrammer.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="education" style="background-color: white;">
+        <div class="container">
+            <h2 class="section-title">Uddannelse</h2>
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <span class="edu-school">Erhvervsakademi Aarhus</span>
+                    <span class="edu-degree">Akademi i skatter og afgifter</span>
+                    <span class="edu-year">2017 - 2020</span>
+                </div>
+                <div class="edu-card">
+                    <span class="edu-school">Aalborg Universitet</span>
+                    <span class="edu-degree">Adgangskursus til maskinmester</span>
+                    <span class="edu-year">2013</span>
+                </div>
+                <div class="edu-card">
+                    <span class="edu-school">Techcollege</span>
+                    <span class="edu-degree">Automekaniker</span>
+                    <span class="edu-year">2007 - 2012</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024. Bygget med kode & kaffe.</p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">Hosted on GitHub Pages</p>
+        </div>
+    </footer>
+
+</body>
+</html>
