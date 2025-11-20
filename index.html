@@ -40,37 +40,40 @@
         header .title { color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
         header .tagline { font-style: italic; opacity: 0.8; margin-top: 10px; max-width: 600px; margin-left: auto; margin-right: auto; }
 
-        /* TYPEWRITER EFFEKT */
+/* TYPEWRITER EFFEKT (LÅST BREDDE) */
         .typewriter {
             display: inline-block;
-            overflow: hidden; /* Skjuler teksten indtil den "skrives" */
-            border-right: .15em solid var(--accent); /* Cursoren */
-            white-space: nowrap; /* Holder det på én linje */
+            overflow: hidden;
+            border-right: .15em solid var(--accent);
+            white-space: nowrap;
             margin: 0 auto;
             letter-spacing: .05em;
+            /* Vi sikrer, at den starter med bredde 0 */
+            width: 0; 
             animation: 
-                typing 3.5s steps(40, end),
+                typing 3.5s steps(38, end) forwards,
                 blink-caret .75s step-end infinite;
         }
 
-        /* Animationen der "skriver" */
+        /* Animationen der bruger 'ch' (tegn) i stedet for % */
         @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
+            0% { width: 0 }
+            /* 39ch er ca. længden på din tekst + lidt luft. Det stopper den fra at flyve væk. */
+            90% { width: 39ch; border-right-color: var(--accent); } 
+            100% { width: 39ch; border-right-color: transparent; } /* Fjerner cursor til sidst */
         }
 
-        /* Animationen der får cursoren til at blinke */
         @keyframes blink-caret {
             from, to { border-color: transparent }
             50% { border-color: var(--accent) }
         }
         
-        /* Fiks til mobil: Fjern effekten på meget små skærme, så teksten ikke klipper */
         @media (max-width: 600px) {
             .typewriter {
                 white-space: normal;
                 border-right: none;
                 animation: none;
+                width: auto; /* Nulstiller på mobil */
             }
         }
 
@@ -656,6 +659,7 @@
     </script>
 </body>
 </html>
+
 
 
 
