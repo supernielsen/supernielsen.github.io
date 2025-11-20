@@ -472,13 +472,12 @@
             </div>
 
             <div class="gallery-item">
-                
                 <div class="comp-container">
-                    <input type="range" min="0" max="100" value="50" class="comp-slider" oninput="moveDivisor(this)">
+                    <input type="range" min="0" max="100" value="50" class="comp-slider" oninput="moveMercedes(this)">
                     
-                    <div class="comp-icon" id="comp-icon"><i class="fa-solid fa-left-right"></i> Træk</div>
+                    <div class="comp-icon" id="mercedes-icon"><i class="fa-solid fa-left-right"></i> Træk</div>
 
-                    <img src="images/Mercedes2.jpg" alt="Færdig Print" class="comp-img comp-foreground-img" id="foreground-img" onerror="this.src='https://placehold.co/400x300?text=Færdig+Print'">
+                    <img src="images/Mercedes2.jpg" alt="Færdig Print" class="comp-img comp-foreground-img" id="mercedes-img" onerror="this.src='https://placehold.co/400x300?text=Færdig+Print'">
                     
                     <img src="images/Mercedes1.jpg" alt="Gammel Del" class="comp-img" onerror="this.src='https://placehold.co/400x300?text=Gammel+Del'">
                 </div>
@@ -502,11 +501,20 @@
             </div>
             
             <div class="gallery-item">
-                <img src="images/hotend.jpg" alt="Hotend Disaster" class="gallery-img" onerror="this.src='https://placehold.co/600x400?text=Ild+og+Plastik'">
+                <div class="comp-container">
+                    <input type="range" min="0" max="100" value="50" class="comp-slider" oninput="moveHotend(this)">
+                    
+                    <div class="comp-icon" id="hotend-icon"><i class="fa-solid fa-left-right"></i> Træk</div>
+
+                    <img src="images/hotend_after.jpg" alt="Renset Hotend" class="comp-img comp-foreground-img" id="hotend-img" onerror="this.src='https://placehold.co/400x300?text=Efter:+Ren'">
+                    
+                    <img src="images/hotend_before.jpg" alt="Smeltet Plastik" class="comp-img" onerror="this.src='https://placehold.co/400x300?text=Før:+Kaos'">
+                </div>
+
                 <div class="gallery-caption">
                     <span class="gallery-title">Kreativ (og lidt farlig) problemløsning</span>
                     <p class="gallery-text">
-                        En hotend begravet i en klump af smeltet plastik. De fleste ville smide den ud. Jeg så en udfordring. Med rensebenzin, varme og lidt forsigtig ild fik jeg smeltet plastikken væk. Resultat: En hotend der fungerer som ny. Nogle gange skal man tænke (meget) utraditionelt.
+                        Træk i slideren for at se redningsaktionen. En hotend begravet i en klump af smeltet plastik. Med rensebenzin, varme og lidt forsigtig ild fik jeg smeltet plastikken væk. Resultat: En hotend der fungerer som ny.
                     </p>
                 </div>
             </div>
@@ -521,35 +529,32 @@
     </div>
 
     <script>
-        // Funktion til Før/Efter slideren
-        function moveDivisor(slider) {
-            const foregroundImg = document.getElementById('foreground-img');
-            const icon = document.getElementById('comp-icon');
-            
-            // Ændrer bredden på det øverste billede baseret på slideren
+        // Funktion til Mercedes Slider
+        function moveMercedes(slider) {
+            const foregroundImg = document.getElementById('mercedes-img');
+            const icon = document.getElementById('mercedes-icon');
             foregroundImg.style.width = slider.value + "%";
-            
-            // Flytter det lille ikon med pilene
+            icon.style.left = slider.value + "%";
+        }
+
+        // Funktion til Hotend Slider
+        function moveHotend(slider) {
+            const foregroundImg = document.getElementById('hotend-img');
+            const icon = document.getElementById('hotend-icon');
+            foregroundImg.style.width = slider.value + "%";
             icon.style.left = slider.value + "%";
         }
 
         function showSection(sectionId, element) {
-            // 1. Skjul alle sektioner
             const sections = document.querySelectorAll('.content-section');
             sections.forEach(sec => sec.classList.remove('active'));
 
-            // 2. Fjern 'active' fra alle knapper
             const cards = document.querySelectorAll('.nav-card');
             cards.forEach(card => card.classList.remove('active'));
 
-            // 3. Vis den valgte sektion
             document.getElementById(sectionId).classList.add('active');
-
-            // 4. Marker den valgte knap
             element.classList.add('active');
         }
     </script>
 </body>
 </html>
-
-
