@@ -11,11 +11,27 @@
     
     <style>
         :root {
+            /* STANDARD (LYS TEMA) */
             --primary: #0f172a; 
             --accent: #3b82f6;  
             --text: #334155;    
             --bg: #f1f5f9;      
-            --card-bg: #ffffff;
+            --card-bg: #ffffff; /* Vigtig: Bruges på alle kort */
+            --header-bg: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --section-alt: #f8fafc; /* Til de små grå bokse */
+            --border-color: #e2e8f0;
+        }
+
+        /* DARK MODE (HACKER TEMA) */
+        [data-theme="dark"] {
+            --primary: #f1f5f9;   /* Lys tekst til overskrifter */
+            --accent: #38bdf8;    /* Neon-blå */
+            --text: #94a3b8;      /* Dæmpet grå tekst */
+            --bg: #0f172a;        /* Dyb navy baggrund */
+            --card-bg: #1e293b;   /* Lidt lysere navy til kort */
+            --header-bg: #020617; /* Helt sort header */
+            --section-alt: #0f172a; /* Mørke indre bokse */
+            --border-color: #334155;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -26,21 +42,39 @@
             color: var(--text);
             background-color: var(--bg);
             padding-bottom: 50px;
+            transition: background-color 0.3s, color 0.3s; /* Glidende overgang */
         }
 
         /* Header Section */
         header {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            background: var(--header-bg);
             color: white;
             padding: 60px 20px 40px;
             text-align: center;
+            position: relative; /* For at kunne placere knappen */
         }
+        
+        /* Dark Mode Knap */
+        .theme-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .theme-switch:hover { background: rgba(255,255,255,0.2); }
 
         header h1 { font-size: 2.5rem; margin-bottom: 10px; }
         header .title { color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
         header .tagline { font-style: italic; opacity: 0.8; margin-top: 10px; max-width: 600px; margin-left: auto; margin-right: auto; }
 
-/* TYPEWRITER EFFEKT (LÅST BREDDE) */
+        /* TYPEWRITER EFFEKT (LÅST BREDDE) */
         .typewriter {
             display: inline-block;
             overflow: hidden;
@@ -48,19 +82,16 @@
             white-space: nowrap;
             margin: 0 auto;
             letter-spacing: .05em;
-            /* Vi sikrer, at den starter med bredde 0 */
             width: 0; 
             animation: 
                 typing 3.5s steps(38, end) forwards,
                 blink-caret .75s step-end infinite;
         }
 
-        /* Animationen der bruger 'ch' (tegn) i stedet for % */
         @keyframes typing {
             0% { width: 0 }
-            /* 39ch er ca. længden på din tekst + lidt luft. Det stopper den fra at flyve væk. */
-            90% { width: 32ch; border-right-color: var(--accent); } 
-            100% { width: 32ch; border-right-color: transparent; } /* Fjerner cursor til sidst */
+            /* 37ch er et godt bud - juster evt. tallet hvis den er for kort/lang */
+            100% { width: 37ch; } 
         }
 
         @keyframes blink-caret {
@@ -73,11 +104,11 @@
                 white-space: normal;
                 border-right: none;
                 animation: none;
-                width: auto; /* Nulstiller på mobil */
+                width: auto; 
             }
         }
 
-        /* Navigation Cards (The "Menu") */
+        /* Navigation Cards */
         .nav-container {
             display: flex;
             justify-content: center;
@@ -88,14 +119,14 @@
         }
 
         .nav-card {
-            background: white;
+            background: var(--card-bg); /* Bruger nu variabel */
             padding: 20px;
             border-radius: 12px;
             width: 280px;
             text-align: center;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
             cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s, border 0.2s, background 0.3s;
             border: 2px solid transparent;
         }
 
@@ -106,7 +137,8 @@
 
         .nav-card.active {
             border-color: var(--accent);
-            background: #eff6ff;
+            background: var(--card-bg); /* Beholder kort-farven, men med kant */
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.3); /* Lille glød */
         }
 
         .nav-icon { font-size: 2rem; color: var(--accent); margin-bottom: 10px; }
@@ -115,16 +147,14 @@
 
         /* Content Sections */
         .content-section {
-            display: none; /* Skjuler alle sektioner som standard */
+            display: none;
             max-width: 900px;
             margin: 40px auto;
             padding: 0 20px;
             animation: fadeIn 0.5s ease;
         }
 
-        .content-section.active {
-            display: block; /* Viser den aktive sektion */
-        }
+        .content-section.active { display: block; }
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
@@ -142,51 +172,50 @@
         }
         
         .gallery-item {
-            background: white;
+            background: var(--card-bg); /* Bruger variabel */
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            transition: background 0.3s;
         }
         
         .gallery-img {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            background-color: #ddd; /* Grå baggrund hvis billede mangler */
+            background-color: #ddd; 
         }
         
-        .gallery-caption {
-            padding: 15px;
-        }
-        
+        .gallery-caption { padding: 15px; }
         .gallery-title { font-weight: 700; color: var(--primary); display: block; margin-bottom: 5px; }
-        .gallery-text { font-size: 0.9rem; color: #64748b; }
+        .gallery-text { font-size: 0.9rem; color: var(--text); } /* Rettet til var(--text) */
 
         /* Career Specific Styles */
         .timeline-item { 
-            background: white; 
+            background: var(--card-bg); /* Bruger variabel */
             padding: 20px; 
             border-radius: 8px; 
             margin-bottom: 20px; 
             border-left: 4px solid var(--accent);
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: background 0.3s;
         }
-        .job-role { font-weight: 800; font-size: 1.1rem; }
+        .job-role { font-weight: 800; font-size: 1.1rem; color: var(--primary); }
         .job-company { color: var(--accent); font-weight: 600; }
-        .skill-tag { background: #e2e8f0; padding: 5px 10px; border-radius: 15px; font-size: 0.85rem; margin-right: 5px; display: inline-block; margin-top: 5px; }
+        .skill-tag { background: var(--section-alt); color: var(--text); border: 1px solid var(--border-color); padding: 5px 10px; border-radius: 15px; font-size: 0.85rem; margin-right: 5px; display: inline-block; margin-top: 5px; }
 
         /* Kontakt footer */
         .contact-bar {
             text-align: center;
             margin-top: 60px;
             padding-top: 20px;
-            border-top: 1px solid #cbd5e1;
-            color: #64748b;
+            border-top: 1px solid var(--border-color);
+            color: var(--text);
         }
         .contact-btn {
             display: inline-block;
             background: var(--primary);
-            color: white;
+            color: var(--bg); /* Tekstfarve på knap skal være modsat baggrund */
             padding: 10px 25px;
             border-radius: 50px;
             text-decoration: none;
@@ -194,73 +223,31 @@
             font-weight: 600;
             transition: background 0.3s;
         }
-        .contact-btn:hover {
-            background: var(--accent);
-        }
+        .contact-btn:hover { background: var(--accent); color: white; }
 
         /* --- FØR/EFTER SLIDER STYLE --- */
         .comp-container {
             position: relative;
             width: 100%;
-            height: 200px; /* Samme højde som de andre */
-            overflow: hidden;
-            border-radius: 8px; /* Sikrer at hjørnerne følger boksen */
-            cursor: ew-resize; /* Viser en pil-markør */
-        }
-
-        .comp-img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            pointer-events: none; /* Gør at man klikker igennem billedet */
-        }
-
-        /* Det øverste billede (Efter-billedet) */
-        .comp-foreground-img {
-            width: 50%; /* Starter på midten */
-            border-right: 3px solid white; /* Den hvide linje */
-            z-index: 2;
-        }
-
-        /* Slideren (den usynlige dims man trækker i) */
-        .comp-slider {
-            position: absolute;
-            -webkit-appearance: none;
-            appearance: none;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            z-index: 3;
-            margin: 0;
-            outline: none;
-        }
-        
-        /* Knappen på slideren (Gør den usynlig men funktionel) */
-        .comp-slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 10px; /* Bredden på "håndtaget" */
             height: 200px;
+            overflow: hidden;
+            border-radius: 8px;
             cursor: ew-resize;
         }
-        
-        /* Et lille ikon der viser man kan trække */
+        .comp-img {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none;
+        }
+        .comp-foreground-img {
+            width: 50%; border-right: 3px solid white; z-index: 2;
+        }
+        .comp-slider {
+            position: absolute; -webkit-appearance: none; appearance: none; width: 100%; height: 100%; background: transparent; z-index: 3; margin: 0; outline: none;
+        }
+        .comp-slider::-webkit-slider-thumb {
+            -webkit-appearance: none; appearance: none; width: 10px; height: 200px; cursor: ew-resize;
+        }
         .comp-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            background: rgba(0,0,0,0.5);
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            z-index: 4;
-            pointer-events: none;
-            white-space: nowrap;
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; background: rgba(0,0,0,0.5); padding: 5px 10px; border-radius: 20px; font-size: 12px; z-index: 4; pointer-events: none; white-space: nowrap;
         }
 
     </style>
@@ -268,6 +255,10 @@
 <body>
 
     <header>
+        <button class="theme-switch" onclick="toggleTheme()">
+            <i class="fa-solid fa-moon"></i> / <i class="fa-solid fa-sun"></i>
+        </button>
+
         <h1>Patrick Mosskov Nielsen</h1>
         <div class="title">Projektleder & Test Manager | Business Analyst</div>
         
@@ -301,23 +292,23 @@
     <section id="career" class="content-section active">
         
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 25px;">
-            <h2 style="margin-bottom: 0; border: none; padding: 0;">Min Profil & Rejse</h2>
+            <h2 style="margin-bottom: 0; border: none; padding: 0;">Min Rejse & Kompetencer</h2>
             <a href="Patrick_Nielsen_CV.pdf" target="_blank" class="btn" style="background-color: var(--accent); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">
                 <i class="fa-solid fa-file-pdf"></i> Hent CV som PDF
             </a>
         </div>
         <div style="height: 4px; background: var(--accent); width: 50px; margin-bottom: 30px;"></div>
 
-        <p style="margin-bottom: 30px; font-size: 1.1rem; font-style: italic; color: #475569;">
-            "Jeg er projektlederen, der sikrer, at vi kommer i mål til tiden og med den rette kvalitet. Men min profil rummer mere end tidsplaner og milepæle. Jeg er samtidig praktikeren, der har arbejdet mig op fra gulvet. Det betyder, at jeg ikke bare styrer projektet fra helikopteren; jeg forstår teknikken og de komplekse forretningsregler i maskinrummet. Jeg leder processen, men jeg har også evnerne til at oversætte og løse problemerne, når de opstår."
+        <p style="margin-bottom: 30px; font-size: 1.1rem; font-style: italic; color: var(--text);">
+            "Jeg er projektlederen, der sikrer, at vi kommer i mål – til tiden og med den rette kvalitet. Men min profil rummer mere end tidsplaner og milepæle. Jeg er samtidig praktikeren, der har arbejdet mig op fra gulvet. Det betyder, at jeg ikke bare styrer projektet fra helikopteren; jeg forstår teknikken og de komplekse forretningsregler i maskinrummet. Jeg leder processen, men jeg har også evnerne til at oversætte og løse problemerne, når de opstår."
         </p>
 
-        <div style="background: white; border-radius: 8px; padding: 25px; margin-bottom: 40px; border-left: 5px solid var(--primary); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+        <div style="background: var(--card-bg); border-radius: 8px; padding: 25px; margin-bottom: 40px; border-left: 5px solid var(--primary); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
             <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.3rem;">Hvordan jeg arbejder: To eksempler</h3>
             
             <div style="margin-bottom: 20px;">
                 <strong style="color: var(--accent); font-size: 1.1rem;"><i class="fa-solid fa-bolt"></i> Effektivitet over manuelt arbejde</strong>
-                <p style="margin-top: 5px; font-size: 0.95rem;">
+                <p style="margin-top: 5px; font-size: 0.95rem; color: var(--text);">
                     Jeg accepterer ikke "plejer", hvis det er ineffektivt. På et komplekst fejlrettelses-projekt byggede jeg scripts, der automatiserede beregninger og hjalp med automatisk dannelse af breve, så de var klar til afsendelse med korrekte beregninger og lovhenvisninger.
                     <br><em>Resultat: En proces, der normalt ville tage uger i manuel behandlingstid, blev eksekveret automatisk på en brøkdel af tiden.</em>
                 </p>
@@ -325,7 +316,7 @@
 
             <div>
                 <strong style="color: var(--accent); font-size: 1.1rem;"><i class="fa-solid fa-magnifying-glass-chart"></i> Mønstergenkendelse</strong>
-                <p style="margin-top: 5px; font-size: 0.95rem;">
+                <p style="margin-top: 5px; font-size: 0.95rem; color: var(--text);">
                     Fordi jeg ikke er akademisk skolet i problemløsning, ser jeg ofte andre sammenhænge. Jeg overtog engang en flerårig, kompleks sagsbunke. Ved at analysere data og gruppere fejlene i mønstre frem for at gruppere dem efter data og typer, fik jeg løst <strong>størstedelen af de mange datafejl på rekordtid.</strong>
                 </p>
             </div>
@@ -337,7 +328,7 @@
             
             <p>I denne rolle bringer jeg hele min historik i spil. Jeg kender systemerne indefra (fra min tid i Motorstyrelsen) og forstår forretningens behov.</p>
             
-            <ul style="margin-top: 15px; padding-left: 20px; font-size: 0.95rem; color: #475569;">
+            <ul style="margin-top: 15px; padding-left: 20px; font-size: 0.95rem; color: var(--text);">
                 <li style="margin-bottom: 8px;"><strong>Transition & Udbud:</strong> Ansvarlig for at drive projektet sikkert fra udarbejdelse af udbud, til at vinde udbuddet og nu helt frem til stabil drift.</li>
                 <li style="margin-bottom: 8px;"><strong>Business Analysis & Proxy PO:</strong> Analyserer forretningskrav og beskriver dem i detaljerede user stories, så udviklingsteamet kan eksekvere effektivt.</li>
                 <li style="margin-bottom: 8px;"><strong>Test Management:</strong> Sikrer kvaliteten i leverancen gennem struktureret test og validering af løsningen.</li>
@@ -355,9 +346,9 @@
             <div class="job-company">Motorstyrelsen | 2021 - 2024</div>
             <p>Her rykkede jeg fra drift til udvikling. Jeg optimerede processerne og var bindeleddet, der sikrede, at komplekse regler blev omsat til korrekt systemadfærd.</p>
             
-            <div style="background: #f8fafc; padding: 15px; border-radius: 5px; margin-top: 10px; border: 1px solid #e2e8f0;">
+            <div style="background: var(--section-alt); padding: 15px; border-radius: 5px; margin-top: 10px; border: 1px solid var(--border-color);">
                 <strong style="color: var(--primary); display:block; margin-bottom:5px;">Nøgleansvar & Resultater:</strong>
-                <ul style="padding-left: 20px; font-size: 0.9rem; color: #475569;">
+                <ul style="padding-left: 20px; font-size: 0.9rem; color: var(--text);">
                     <li style="margin-bottom: 6px;"><strong>Automatisering:</strong> Designede logikken bag fuld- og semiautomatiske værktøjer, hvilket reducerede manuelle processer markant.</li>
                     <li style="margin-bottom: 6px;"><strong>Data-projekter:</strong> Drev omfattende analyseprojekter for at identificere og beskrive komplekse datafejl. Udarbejdede de nødvendige workarounds og værktøjer til at håndtere sagerne, mens systemfejlen blev udbedret.</li>
                     <li style="margin-bottom: 6px;"><strong>Leverandørstyring:</strong> Sparringspartner for eksterne leverandører. Gennemgik løsningsbeskrivelser kritisk og sikrede, at DMR blev udviklet efter kravene.</li>
@@ -378,9 +369,9 @@
             <div class="job-company">Motorstyrelsen | 2016 - 2021</div>
             <p>Her opbyggede jeg min dybe domæneviden. Jeg var ikke bare sagsbehandler; jeg strukturerede og kvalitetssikrede området på tværs af organisationen.</p>
             
-            <div style="background: #f8fafc; padding: 15px; border-radius: 5px; margin-top: 10px; border: 1px solid #e2e8f0;">
+            <div style="background: var(--section-alt); padding: 15px; border-radius: 5px; margin-top: 10px; border: 1px solid var(--border-color);">
                 <strong style="color: var(--primary); display:block; margin-bottom:5px;">Specialist-opgaver:</strong>
-                <ul style="padding-left: 20px; font-size: 0.9rem; color: #475569;">
+                <ul style="padding-left: 20px; font-size: 0.9rem; color: var(--text);">
                     <li style="margin-bottom: 6px;"><strong>Fagligt Ansvar:</strong> Eneansvarlig på landsplan for komplekse specialområder (herunder ID-tab) i en længere periode.</li>
                     <li style="margin-bottom: 6px;"><strong>System-fundament:</strong> Ansvarlig for udvikling og vedligehold af de centrale beregningsskemaer, der dannede grundlag for logikken i de nuværende IT-systemer.</li>
                     <li style="margin-bottom: 6px;"><strong>Driftsstyring:</strong> Varetog dele af driftsplanlægning og ressourcestyring på tværs af flere afdelinger for at sikre overholdelse af frister.</li>
@@ -408,12 +399,12 @@
             </div>
         </div>
         
-        <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0;">
+        <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border-color);">
             <h3 style="font-size: 1.2rem; margin-bottom: 10px;">Uddannelse</h3>
-            <p style="font-size: 0.9rem; color: #64748b;">
+            <p style="font-size: 0.9rem; color: var(--text);">
                 <strong>Akademi i skatter og afgifter</strong> (2017-2020) • 
-                <strong>Automekaniker</strong> (2007-2012) • 
-                <strong>Adgangskursus maskinmester</strong> (2013-2013)
+                <strong>Adgangskursus til maskinmester</strong> (2013) •
+                <strong>Automekaniker</strong> (2007-2012)
             </p>
         </div>
 
@@ -425,18 +416,18 @@
     </section>
 
     <section id="personal" class="content-section">
-        <h2>Bag Facaden</h2>
+        <h2>Mennesket bag titlen</h2>
         <p style="margin-bottom: 30px; font-size: 1.1rem;">
-            Når jeg tager arbejdshandskerne af, handler mit liv om nærvær og perspektiv. Jeg tror på, at man skal gøre tingene 100% uanset om det gælder forældreskab eller fritid.
+            Når jeg tager arbejdshandskerne af, handler mit liv om nærvær og perspektiv. Jeg tror på, at man skal gøre tingene 100% – uanset om det gælder forældreskab eller fritid.
         </p>
 
         <div class="gallery-grid">
             <div class="gallery-item">
                 <img src="images/mig_og_soen.jpg" alt="Far og søn" class="gallery-img" onerror="this.src='https://placehold.co/600x400?text=Far+og+Søn'">
                 <div class="gallery-caption">
-                    <span class="gallery-title"><i class="fa-solid fa-child-reaching"></i> 50/50 = 100% Fokus</span>
+                    <span class="gallery-title"><i class="fa-solid fa-child-reaching"></i> 50/50 = 100% Nærvær</span>
                     <p class="gallery-text">
-                        50/50 ordningen betyder, at jeg er 100% på, når vi er sammen. Min vigtigste opgave er at være en stærk far og et ordentligt forbillede. Vi fordyber os i alt fra perleplader til teknik, for jeg tror på, at man skaber tryghed gennem både faste rammer og fælles oplevelser. Jeg er hans far, hans guide og hans makker.
+                        Min søn er hos mig halvdelen af tiden, og det har lært mig at prioritere benhårdt. Jeg er først og fremmest far og rollemodel, der sætter rammer og retning. Men nærværet skabes i øjenhøjde. Derfor er jeg også legekammeraten på gulvet, når vi bygger verdener i DUPLO. Det handler om balancen mellem ansvar og leg.
                     </p>
                 </div>
             </div>
@@ -484,13 +475,13 @@
     </section>
 
     <section id="maker" class="content-section">
-        <h2>Maker Space</h2>
+        <h2>Maker Space & 3D Print</h2>
         
-        <div style="background: #eff6ff; padding: 20px; border-radius: 8px; margin-bottom: 30px; border-left: 5px solid var(--accent);">
+        <div style="background: var(--section-alt); padding: 20px; border-radius: 8px; margin-bottom: 30px; border-left: 5px solid var(--accent);">
             <p style="font-size: 1.1rem; font-style: italic; font-weight: 600; color: var(--primary);">
                 "Det har jeg aldrig prøvet før, så det klarer jeg helt sikkert!"
             </p>
-            <p style="margin-top: 10px; font-size: 0.95rem;">
+            <p style="margin-top: 10px; font-size: 0.95rem; color: var(--text);">
                 Det er min tilgang til læring. Jeg er selvlært i CAD og 3D-print, fordi jeg er nysgerrig. Jeg startede for over 10 år siden med at bygge min egen printer sammen med en kammerat – længe før det blev mainstream.
             </p>
         </div>
@@ -519,14 +510,10 @@
             <div class="gallery-item">
                 <div class="comp-container">
                     <input type="range" min="0" max="100" value="50" class="comp-slider" oninput="moveMercedes(this)">
-                    
                     <div class="comp-icon" id="mercedes-icon"><i class="fa-solid fa-left-right"></i> Træk</div>
-
                     <img src="images/Mercedes2.jpg" alt="Færdig Print" class="comp-img comp-foreground-img" id="mercedes-img" onerror="this.src='https://placehold.co/400x300?text=Færdig+Print'">
-                    
                     <img src="images/Mercedes1.jpg" alt="Gammel Del" class="comp-img" onerror="this.src='https://placehold.co/400x300?text=Gammel+Del'">
                 </div>
-
                 <div class="gallery-caption">
                     <span class="gallery-title">Reverse Engineering (Træk i billedet)</span>
                     <p class="gallery-text">
@@ -548,14 +535,10 @@
             <div class="gallery-item">
                 <div class="comp-container">
                     <input type="range" min="0" max="100" value="50" class="comp-slider" oninput="moveHotend(this)">
-                    
                     <div class="comp-icon" id="hotend-icon"><i class="fa-solid fa-left-right"></i> Træk</div>
-
                     <img src="images/hotend_after.jpg" alt="Renset Hotend" class="comp-img comp-foreground-img" id="hotend-img" onerror="this.src='https://placehold.co/400x300?text=Efter:+Ren'">
-                    
                     <img src="images/hotend_before.jpg" alt="Smeltet Plastik" class="comp-img" onerror="this.src='https://placehold.co/400x300?text=Før:+Kaos'">
                 </div>
-
                 <div class="gallery-caption">
                     <span class="gallery-title">Kreativ (og lidt farlig) problemløsning</span>
                     <p class="gallery-text">
@@ -565,55 +548,53 @@
             </div>
         </div>
     </section>
-    
-<section id="colleague" style="background-color: white;">
+
+    <section id="colleague" style="background-color: var(--card-bg);">
         <div class="container">
-            
             <h2 style="border: none !important; padding-left: 0; text-align: center; margin-bottom: 20px;">
                 Kollegaen Patrick
             </h2>
-
-            <p style="margin-bottom: 40px; max-width: 800px; font-size: 1.1rem; margin-left: auto; margin-right: auto; text-align: center; color: #475569;">
+            <p style="margin-bottom: 40px; max-width: 800px; font-size: 1.1rem; margin-left: auto; margin-right: auto; text-align: center; color: var(--text);">
                 "Jeg er typen, der fejrer det mindste korrekte komma. Men jeg er også ham, der bliver ved til kl. 03.00 om natten, hvis noget <em>skal</em> løses."
             </p>
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
                 
-                <div style="padding: 25px; background: #f8fafc; border-radius: 12px; border-left: 5px solid var(--primary);">
+                <div style="padding: 25px; background: var(--section-alt); border-radius: 12px; border-left: 5px solid var(--primary);">
                     <h3 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 15px;">
                         <i class="fa-solid fa-comments" style="color: var(--accent); margin-right: 10px;"></i>
                         Svesken på disken
                     </h3>
-                    <p style="font-size: 0.95rem; color: #475569; margin-bottom: 15px;">
+                    <p style="font-size: 0.95rem; color: var(--text); margin-bottom: 15px;">
                         Mit nøgleord er <strong>gennemsigtighed</strong>. Hvis der er knas i samarbejdet, går jeg ikke til HR eller hvisker i krogene. Jeg går direkte til dig, og spørger: "Har vi et problem her?". 
                     </p>
-                    <p style="font-size: 0.95rem; color: #475569;">
+                    <p style="font-size: 0.95rem; color: var(--text);">
                         Det betyder, at mine kollegaer altid ved, hvor de har mig. Jeg bærer ikke nag, og jeg forventer, at man kommer til mig, hvis jeg har trådt nogen over tæerne.
                     </p>
                 </div>
 
-                <div style="padding: 25px; background: #f8fafc; border-radius: 12px; border-left: 5px solid var(--primary);">
+                <div style="padding: 25px; background: var(--section-alt); border-radius: 12px; border-left: 5px solid var(--primary);">
                     <h3 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 15px;">
                         <i class="fa-solid fa-wrench" style="color: var(--accent); margin-right: 10px;"></i>
                         Humør & Værktøjskasse
                     </h3>
-                    <p style="font-size: 0.95rem; color: #475569; margin-bottom: 15px;">
+                    <p style="font-size: 0.95rem; color: var(--text); margin-bottom: 15px;">
                         Jeg bruger humor til alt – også som coping-mekanisme, når tingene brænder på. Jeg møder ind med højt humør og hilser på alle. En dårlig stemning eller brok er det eneste, der kan dræbe min vibe.
                     </p>
-                    <p style="font-size: 0.95rem; color: #475569;">
+                    <p style="font-size: 0.95rem; color: var(--text);">
                         Og så kan jeg ikke lade være med at fikse ting. Hvis kontorets kaffemaskine strejker, ringer jeg ikke til support. Jeg henter min skruetrækker og fikser den. Fordi jeg kan.
                     </p>
                 </div>
 
-                <div style="padding: 25px; background: #f8fafc; border-radius: 12px; border-left: 5px solid var(--primary);">
+                <div style="padding: 25px; background: var(--section-alt); border-radius: 12px; border-left: 5px solid var(--primary);">
                     <h3 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 15px;">
                         <i class="fa-solid fa-shield-halved" style="color: var(--accent); margin-right: 10px;"></i>
                         Den Rolige Pol
                     </h3>
-                    <p style="font-size: 0.95rem; color: #475569; margin-bottom: 15px;">
+                    <p style="font-size: 0.95rem; color: var(--text); margin-bottom: 15px;">
                         Når alt omkring os er kaos, finder jeg roen. Jeg lader ikke min egen travlhed smitte af på andre. Jeg er ham, der bevarer overblikket og skaber tryghed, selvom deadlinen presser.
                     </p>
-                    <p style="font-size: 0.95rem; color: #475569;">
+                    <p style="font-size: 0.95rem; color: var(--text);">
                         Jeg ser mine kollegaer – også på de dårlige dage. For mig er et godt arbejdsmiljø, når man kan sige "i dag tager vi sgu en øl", fordi dagen har været træls.
                     </p>
                 </div>
@@ -621,7 +602,7 @@
             </div>
         </div>
     </section>
-    
+
     <div class="contact-bar">
         <p>Vil du høre mere om mine projekter eller min profil?</p>
         <a href="mailto:supernielsen@mensa.dk" class="contact-btn">
@@ -630,6 +611,43 @@
     </div>
 
     <script>
+        // 1. DARK MODE FUNKTION
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            
+            if (currentTheme === 'dark') {
+                html.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Tjekker om brugeren har valgt dark mode før
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+
+        // 2. EASTER EGG - HER KAN DU INDSÆTTE DIN EGEN ASCII ART MELLEM ` `
+        console.log(`
+%c
+/* HER INDSÆTTER DU DIN VILDE ASCII ART */
+         
+%cHej Nysgerrige! 😎
+
+Fedt at du kigger med i maskinrummet.
+Leder du efter en, der tør gå i dybden?
+
+Så lad os tage en kop kaffe.
+Mvh Patrick
+        `, 
+        "font-family: monospace; font-weight: bold; color: #3b82f6;", 
+        "font-family: sans-serif; font-size: 14px; color: #334155;"
+        );
+
         // Funktion til Mercedes Slider
         function moveMercedes(slider) {
             const foregroundImg = document.getElementById('mercedes-img');
@@ -659,19 +677,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
