@@ -16,7 +16,7 @@
             --accent: #3b82f6;  
             --text: #334155;    
             --bg: #f1f5f9;      
-            --card-bg: #ffffff; 
+            --card-bg: #ffffff; /* Vigtig: Bruges på alle kort */
             --header-bg: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             --section-alt: #f8fafc;
             --border-color: #e2e8f0;
@@ -42,7 +42,7 @@
             color: var(--text);
             background-color: var(--bg);
             padding-bottom: 50px;
-            transition: background-color 0.3s, color 0.3s; 
+            transition: background-color 0.3s, color 0.3s; /* Glidende overgang */
         }
 
         /* Header Section */
@@ -51,9 +51,9 @@
             color: white;
             padding: 60px 20px 40px;
             text-align: center;
-            position: relative; 
+            position: relative; /* For at knappen kan sidde rigtigt */
         }
-        
+
         /* Dark Mode Knap */
         .theme-switch {
             position: absolute;
@@ -90,6 +90,7 @@
 
         @keyframes typing {
             0% { width: 0 }
+            /* 32ch var dit magiske tal! */
             100% { width: 32ch; } 
         }
 
@@ -118,7 +119,7 @@
         }
 
         .nav-card {
-            background: var(--card-bg); /* Rettet til variabel for Dark Mode */
+            background: var(--card-bg); /* Bruger variabel nu */
             padding: 20px;
             border-radius: 12px;
             width: 280px;
@@ -176,7 +177,7 @@
         }
         
         .gallery-item {
-            background: var(--card-bg); /* Rettet til variabel for Dark Mode */
+            background: var(--card-bg); /* Bruger variabel nu */
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
@@ -196,7 +197,7 @@
 
         /* Career Specific Styles */
         .timeline-item { 
-            background: var(--card-bg); /* Rettet til variabel for Dark Mode */
+            background: var(--card-bg); /* Bruger variabel nu */
             padding: 20px; 
             border-radius: 8px; 
             margin-bottom: 20px; 
@@ -238,23 +239,18 @@
             border-radius: 8px; 
             cursor: ew-resize; 
         }
-
         .comp-img {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; 
         }
-
         .comp-foreground-img {
             width: 50%; border-right: 3px solid white; z-index: 2;
         }
-
         .comp-slider {
             position: absolute; -webkit-appearance: none; appearance: none; width: 100%; height: 100%; background: transparent; z-index: 3; margin: 0; outline: none;
         }
-        
         .comp-slider::-webkit-slider-thumb {
             -webkit-appearance: none; appearance: none; width: 10px; height: 200px; cursor: ew-resize;
         }
-        
         .comp-icon {
             position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; background: rgba(0,0,0,0.5); padding: 5px 10px; border-radius: 20px; font-size: 12px; z-index: 4; pointer-events: none; white-space: nowrap;
         }
@@ -301,7 +297,7 @@
     <section id="career" class="content-section active">
         
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 25px;">
-            <h2 style="margin-bottom: 0; border: none; padding: 0;">Min Rejse & Kompetencer</h2>
+            <h2 style="margin-bottom: 0; border: none; padding: 0;">Min Profil & Rejse</h2>
             <a href="Patrick_Nielsen_CV.pdf" target="_blank" class="btn" style="background-color: var(--accent); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">
                 <i class="fa-solid fa-file-pdf"></i> Hent CV som PDF
             </a>
@@ -309,7 +305,7 @@
         <div style="height: 4px; background: var(--accent); width: 50px; margin-bottom: 30px;"></div>
 
         <p style="margin-bottom: 30px; font-size: 1.1rem; font-style: italic; color: var(--text);">
-            "Jeg er projektlederen, der sikrer, at vi kommer i mål – til tiden og med den rette kvalitet. Men min profil rummer mere end tidsplaner og milepæle. Jeg er samtidig praktikeren, der har arbejdet mig op fra gulvet. Det betyder, at jeg ikke bare styrer projektet fra helikopteren; jeg forstår teknikken og de komplekse forretningsregler i maskinrummet. Jeg leder processen, men jeg har også evnerne til at oversætte og løse problemerne, når de opstår."
+            "Jeg er projektlederen, der sikrer, at vi kommer i mål til tiden og med den rette kvalitet. Men min profil rummer mere end tidsplaner og milepæle. Jeg er samtidig praktikeren, der har arbejdet mig op fra gulvet. Det betyder, at jeg ikke bare styrer projektet fra helikopteren; jeg forstår teknikken og de komplekse forretningsregler i maskinrummet. Jeg leder processen, men jeg har også evnerne til at oversætte og løse problemerne, når de opstår."
         </p>
 
         <div style="background: var(--card-bg); border-radius: 8px; padding: 25px; margin-bottom: 40px; border-left: 5px solid var(--primary); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
@@ -412,8 +408,8 @@
             <h3 style="font-size: 1.2rem; margin-bottom: 10px;">Uddannelse</h3>
             <p style="font-size: 0.9rem; color: var(--text);">
                 <strong>Akademi i skatter og afgifter</strong> (2017-2020) • 
-                <strong>Adgangskursus til maskinmester</strong> (2013) •
-                <strong>Automekaniker</strong> (2007-2012)
+                <strong>Automekaniker</strong> (2007-2012) • 
+                <strong>Adgangskursus maskinmester</strong> (2013-2013)
             </p>
         </div>
 
@@ -436,7 +432,7 @@
                 <div class="gallery-caption">
                     <span class="gallery-title"><i class="fa-solid fa-child-reaching"></i> 50/50 = 100% Fokus</span>
                     <p class="gallery-text">
-                        Min søn er hos mig halvdelen af tiden, og det har lært mig at prioritere benhårdt. Når han er her, er jeg ikke bare "til stede" jeg er hans legekammerat. Vi fordyber os i alt fra perleplader til DUPLO. Det giver mig en mental ro at vide, at jeg kan dedikere mig fuldt ud til rollen som far.
+                        50/50 ordningen betyder, at jeg er 100% på, når vi er sammen. Min vigtigste opgave er at være en stærk far og et ordentligt forbillede. Vi fordyber os i alt fra perleplader til teknik, for jeg tror på, at man skaber tryghed gennem både faste rammer og fælles oplevelser. Jeg er hans far, hans guide og hans makker.
                     </p>
                 </div>
             </div>
@@ -484,7 +480,7 @@
     </section>
 
     <section id="maker" class="content-section">
-        <h2>Maker Space & 3D Print</h2>
+        <h2>Maker Space</h2>
         
         <div style="background: var(--section-alt); padding: 20px; border-radius: 8px; margin-bottom: 30px; border-left: 5px solid var(--accent);">
             <p style="font-size: 1.1rem; font-style: italic; font-weight: 600; color: var(--primary);">
@@ -519,10 +515,14 @@
             <div class="gallery-item">
                 <div class="comp-container">
                     <input type="range" min="0" max="100" value="50" class="comp-slider" oninput="moveMercedes(this)">
+                    
                     <div class="comp-icon" id="mercedes-icon"><i class="fa-solid fa-left-right"></i> Træk</div>
+
                     <img src="images/Mercedes2.jpg" alt="Færdig Print" class="comp-img comp-foreground-img" id="mercedes-img" onerror="this.src='https://placehold.co/400x300?text=Færdig+Print'">
+                    
                     <img src="images/Mercedes1.jpg" alt="Gammel Del" class="comp-img" onerror="this.src='https://placehold.co/400x300?text=Gammel+Del'">
                 </div>
+
                 <div class="gallery-caption">
                     <span class="gallery-title">Reverse Engineering (Træk i billedet)</span>
                     <p class="gallery-text">
@@ -544,10 +544,14 @@
             <div class="gallery-item">
                 <div class="comp-container">
                     <input type="range" min="0" max="100" value="50" class="comp-slider" oninput="moveHotend(this)">
+                    
                     <div class="comp-icon" id="hotend-icon"><i class="fa-solid fa-left-right"></i> Træk</div>
+
                     <img src="images/hotend_after.jpg" alt="Renset Hotend" class="comp-img comp-foreground-img" id="hotend-img" onerror="this.src='https://placehold.co/400x300?text=Efter:+Ren'">
+                    
                     <img src="images/hotend_before.jpg" alt="Smeltet Plastik" class="comp-img" onerror="this.src='https://placehold.co/400x300?text=Før:+Kaos'">
                 </div>
+
                 <div class="gallery-caption">
                     <span class="gallery-title">Kreativ (og lidt farlig) problemløsning</span>
                     <p class="gallery-text">
