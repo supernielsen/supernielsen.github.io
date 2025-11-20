@@ -161,6 +161,71 @@
             background: var(--accent);
         }
 
+        /* --- FØR/EFTER SLIDER STYLE --- */
+        .comp-container {
+            position: relative;
+            width: 100%;
+            height: 200px; /* Samme højde som de andre */
+            overflow: hidden;
+            border-radius: 8px; /* Sikrer at hjørnerne følger boksen */
+            cursor: ew-resize; /* Viser en pil-markør */
+        }
+
+        .comp-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none; /* Gør at man klikker igennem billedet */
+        }
+
+        /* Det øverste billede (Efter-billedet) */
+        .comp-foreground-img {
+            width: 50%; /* Starter på midten */
+            border-right: 3px solid white; /* Den hvide linje */
+            z-index: 2;
+        }
+
+        /* Slideren (den usynlige dims man trækker i) */
+        .comp-slider {
+            position: absolute;
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: 3;
+            margin: 0;
+            outline: none;
+        }
+        
+        /* Knappen på slideren (Gør den usynlig men funktionel) */
+        .comp-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 10px; /* Bredden på "håndtaget" */
+            height: 200px;
+            cursor: ew-resize;
+        }
+        
+        /* Et lille ikon der viser man kan trække */
+        .comp-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            background: rgba(0,0,0,0.5);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            z-index: 4;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
     </style>
 </head>
 <body>
@@ -340,8 +405,8 @@
                     </p>
                 </div>
             </div>
-			
-			<div class="gallery-item">
+            
+            <div class="gallery-item">
                 <img src="images/mc_fix.jpg" alt="Fejlsøgning i vejkanten" class="gallery-img" onerror="this.src='https://placehold.co/600x400?text=Nedbrud+på+turen'">
                 <div class="gallery-caption">
                     <span class="gallery-title"><i class="fa-solid fa-screwdriver-wrench"></i> Nedbrud? Ingen panik.</span>
@@ -350,8 +415,8 @@
                     </p>
                 </div>
             </div>
-			
-			<div class="gallery-item">
+            
+            <div class="gallery-item">
                 <img src="images/mc_plan.jpg" alt="Python Route Plan" class="gallery-img" onerror="this.src='https://placehold.co/600x400?text=Python+Ruteplan'">
                 <div class="gallery-caption">
                     <span class="gallery-title"><i class="fa-brands fa-python"></i> Projektledelse på to hjul</span>
@@ -407,16 +472,26 @@
             </div>
 
             <div class="gallery-item">
-                <img src="images/3d_print3.jpg" alt="Mercedes del" class="gallery-img" onerror="this.src='https://placehold.co/600x400?text=Reverse+Engineering'">
+                
+                <div class="comp-container">
+                    <input type="range" min="0" max="100" value="50" class="comp-slider" oninput="moveDivisor(this)">
+                    
+                    <div class="comp-icon" id="comp-icon"><i class="fa-solid fa-left-right"></i> Træk</div>
+
+                    <img src="images/mercedes2.jpg" alt="Færdig Print" class="comp-img comp-foreground-img" id="foreground-img" onerror="this.src='https://placehold.co/400x300?text=Færdig+Print'">
+                    
+                    <img src="images/mercedes1.jpg" alt="Gammel Del" class="comp-img" onerror="this.src='https://placehold.co/400x300?text=Gammel+Del'">
+                </div>
+
                 <div class="gallery-caption">
-                    <span class="gallery-title">Når reservedelen er udgået</span>
+                    <span class="gallery-title">Reverse Engineering (Træk i billedet)</span>
                     <p class="gallery-text">
-                        Her mødes mekanikeren og nørden. Jeg printer dele, der ikke længere kan skaffes. Senest designede og printede jeg et drivhjul til en brændstofpumpe på en ældre Mercedes. Hvor andre må give op, tegner jeg en løsning.
+                        Her mødes mekanikeren og nørden. Træk i slideren for at se forvandlingen fra den udgåede, defekte del til min ny-designede og 3D-printede reservedel. Problemet løst med en skydelære og CAD.
                     </p>
                 </div>
             </div>
-			
-			<div class="gallery-item">
+            
+            <div class="gallery-item">
                 <img src="images/filament_toys.jpg" alt="Legetøj af rester" class="gallery-img" onerror="this.src='https://placehold.co/600x400?text=Zero+Waste+Legetøj'">
                 <div class="gallery-caption">
                     <span class="gallery-title"><i class="fa-solid fa-recycle"></i> Zero Waste & Motorik</span>
@@ -425,8 +500,8 @@
                     </p>
                 </div>
             </div>
-			
-			<div class="gallery-item">
+            
+            <div class="gallery-item">
                 <img src="images/hotend.jpg" alt="Hotend Disaster" class="gallery-img" onerror="this.src='https://placehold.co/600x400?text=Ild+og+Plastik'">
                 <div class="gallery-caption">
                     <span class="gallery-title">Kreativ (og lidt farlig) problemløsning</span>
@@ -446,6 +521,18 @@
     </div>
 
     <script>
+        // Funktion til Før/Efter slideren
+        function moveDivisor(slider) {
+            const foregroundImg = document.getElementById('foreground-img');
+            const icon = document.getElementById('comp-icon');
+            
+            // Ændrer bredden på det øverste billede baseret på slideren
+            foregroundImg.style.width = slider.value + "%";
+            
+            // Flytter det lille ikon med pilene
+            icon.style.left = slider.value + "%";
+        }
+
         function showSection(sectionId, element) {
             // 1. Skjul alle sektioner
             const sections = document.querySelectorAll('.content-section');
