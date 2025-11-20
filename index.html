@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patrick M. Nielsen | Profil & Portefølje</title>
+    <title>Patrick Mosskov Nielsen | Profil & Portefølje</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -174,8 +174,8 @@
     <div class="nav-container">
         <div class="nav-card active" onclick="showSection('career', this)">
             <div class="nav-icon"><i class="fa-solid fa-briefcase"></i></div>
-            <div class="nav-title">Karriere & CV</div>
-            <div class="nav-desc">Det professionelle overblik</div>
+            <div class="nav-title">Min Profil & Rejse</div>
+            <div class="nav-desc">Professionelt overblik</div>
         </div>
         <div class="nav-card" onclick="showSection('personal', this)">
             <div class="nav-icon"><i class="fa-solid fa-motorcycle"></i></div>
@@ -189,10 +189,10 @@
         </div>
     </div>
 
-<section id="career" class="content-section active">
+    <section id="career" class="content-section active">
         
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 25px;">
-            <h2 style="margin-bottom: 0; border: none; padding: 0;">Min Profil & Rejse</h2>
+            <h2 style="margin-bottom: 0; border: none; padding: 0;">Min Rejse & Kompetencer</h2>
             <a href="Patrick_Nielsen_CV.pdf" target="_blank" class="btn" style="background-color: var(--accent); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">
                 <i class="fa-solid fa-file-pdf"></i> Hent CV som PDF
             </a>
@@ -202,6 +202,25 @@
         <p style="margin-bottom: 30px; font-size: 1.1rem; font-style: italic; color: #475569;">
             "Jeg er praktikeren, der har arbejdet mig op fra gulvet til maskinrummet i dansk IT. Min styrke er kombinationen: Jeg forstår de komplekse forretningsregler, jeg kan gennemskue systemfejl, og jeg kan oversætte det hele, så udviklerne ved præcis, hvad de skal bygge."
         </p>
+
+        <div style="background: white; border-radius: 8px; padding: 25px; margin-bottom: 40px; border-left: 5px solid var(--primary); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+            <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.3rem;">Hvordan jeg arbejder: To eksempler</h3>
+            
+            <div style="margin-bottom: 20px;">
+                <strong style="color: var(--accent); font-size: 1.1rem;"><i class="fa-solid fa-bolt"></i> Effektivitet over manuelt arbejde</strong>
+                <p style="margin-top: 5px; font-size: 0.95rem;">
+                    Jeg accepterer ikke "plejer", hvis det er ineffektivt. På et komplekst fejlrettelses-projekt byggede jeg et script i Python/Excel, der automatiserede beregningen og dannelsen af breve til e-Boks.
+                    <br><em>Resultat: En proces, der normalt ville tage uger i manuel behandlingstid, blev eksekveret automatisk på en brøkdel af tiden.</em>
+                </p>
+            </div>
+
+            <div>
+                <strong style="color: var(--accent); font-size: 1.1rem;"><i class="fa-solid fa-magnifying-glass-chart"></i> Mønstergenkendelse</strong>
+                <p style="margin-top: 5px; font-size: 0.95rem;">
+                    Fordi jeg ikke er akademisk skolet i problemløsning, ser jeg ofte andre sammenhænge. Jeg overtog engang en flerårig, kompleks sagsbunke. Ved at analysere data og gruppere fejlene i mønstre frem for at tage dem én ad gangen, fik jeg løst <strong>størstedelen af den tunge backlog på rekordtid.</strong>
+                </p>
+            </div>
+        </div>
 
         <div class="timeline-item">
             <div class="job-role">Projektleder & Test Manager | Business Analyst</div>
@@ -297,31 +316,37 @@
     <section id="personal" class="content-section">
         <h2>Mennesket bag titlen</h2>
         <p style="margin-bottom: 30px; font-size: 1.1rem;">
-            Når jeg ikke styrer IT-projekter, handler mit liv om nærvær og hestekræfter. Jeg er far på deltid (50/50) og eventyrer på fuldtid.
+            Når jeg tager arbejdshanskerne af, handler mit liv om nærvær og perspektiv. Jeg tror på, at man skal gøre tingene 100% – uanset om det gælder forældreskab eller fritid.
         </p>
 
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img src="images/Far.jpg" alt="Mig og min søn" class="gallery-img" onerror="this.src='https://placehold.co/600x400?text=Upload:+Far.jpg'">
+                <img src="images/mig_og_soen.jpg" alt="Far og søn" class="gallery-img" onerror="this.src='https://placehold.co/600x400?text=Far+og+Søn'">
                 <div class="gallery-caption">
-                    <span class="gallery-title">Far & Søn tid</span>
-                    <p class="gallery-text">Min vigtigste rolle..</p>
+                    <span class="gallery-title"><i class="fa-solid fa-child-reaching"></i> 50/50 = 100% Fokus</span>
+                    <p class="gallery-text">
+                        Min søn er hos mig halvdelen af tiden, og det har lært mig at prioritere benhårdt. Når han er her, er jeg ikke bare "til stede" – jeg er hans legekammerat. Vi fordyber os i alt fra perleplader til DUPLO. Det giver mig en mental ro at vide, at jeg kan dedikere mig fuldt ud til rollen som far.
+                    </p>
                 </div>
             </div>
 
             <div class="gallery-item">
-                <img src="images/mc_tur.jpg" alt="Motorcykeltur" class="gallery-img" onerror="this.src='https://placehold.co/600x400?text=Upload:+mc_tur.jpg'">
+                <img src="images/mc_tur.jpg" alt="Motorcykeltur" class="gallery-img" onerror="this.src='https://placehold.co/600x400?text=MC+Tur'">
                 <div class="gallery-caption">
-                    <span class="gallery-title">På to hjul i udlandet</span>
-                    <p class="gallery-text">Frihed er en fuldtanket motorcykel og en åben vej.</p>
+                    <span class="gallery-title"><i class="fa-solid fa-motorcycle"></i> Perspektiv på to hjul</span>
+                    <p class="gallery-text">
+                        Det handler ikke om fart, men om at "reboote" hjernen. I det sekund jeg sætter mig på maskinen, tømmes hovedet. Jeg ser naturen, dyrene og omgivelserne på en helt anden måde end fra en bil. Det er her, jeg finder roen – også selvom jeg altid har telefonen i øret og er tilgængelig.
+                    </p>
                 </div>
             </div>
 
             <div class="gallery-item">
-                <img src="images/vaerksted.jpg" alt="I værkstedet" class="gallery-img" onerror="this.src='https://placehold.co/600x400?text=Upload:+vaerksted.jpg'">
+                <img src="images/vaerksted.jpg" alt="Værkstedet" class="gallery-img" onerror="this.src='https://placehold.co/600x400?text=Værksted'">
                 <div class="gallery-caption">
-                    <span class="gallery-title">Hænderne skruet rigtigt på</span>
-                    <p class="gallery-text">Jeg har ikke glemt mit håndværk. Jeg elsker stadig at fejlsøge og reparere biler i fritiden. Det holder min problemløsning skarp.</p>
+                    <span class="gallery-title"><i class="fa-solid fa-wrench"></i> Håndværket</span>
+                    <p class="gallery-text">
+                        Selvom jeg arbejder med IT, slipper jeg aldrig håndværket. At kunne fikse ting fysisk holder min problemløsning skarp. Der er en tilfredsstillelse i at se et konkret resultat, som man ikke altid får bag en skærm.
+                    </p>
                 </div>
             </div>
         </div>
@@ -329,32 +354,44 @@
 
     <section id="maker" class="content-section">
         <h2>Maker Space & 3D Print</h2>
-        <p style="margin-bottom: 30px;">
-            Jeg kan ikke lade være med at optimere ting. Med mine 3D-printere går jeg fra idé til fysisk produkt på få timer. Det er her, min tekniske nysgerrighed får frit løb.
-        </p>
+        
+        <div style="background: #eff6ff; padding: 20px; border-radius: 8px; margin-bottom: 30px; border-left: 5px solid var(--accent);">
+            <p style="font-size: 1.1rem; font-style: italic; font-weight: 600; color: var(--primary);">
+                "Det har jeg aldrig prøvet før, så det klarer jeg helt sikkert!"
+            </p>
+            <p style="margin-top: 10px; font-size: 0.95rem;">
+                Det er min tilgang til læring. Jeg er selvlært i CAD og 3D-print, fordi jeg er nysgerrig. Jeg startede for over 10 år siden med at bygge min egen printer sammen med en kammerat – længe før det blev mainstream.
+            </p>
+        </div>
 
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img src="images/3d_print1.jpg" alt="3D Print Projekt 1" class="gallery-img" onerror="this.src='https://placehold.co/600x400?text=Upload:+3d_print1.jpg'">
+                <img src="images/3d_print1.jpg" alt="Fra tanke til produkt" class="gallery-img" onerror="this.src='https://placehold.co/600x400?text=Fra+Tanke+til+Produkt'">
                 <div class="gallery-caption">
-                    <span class="gallery-title">Custom Beslag & Fixes</span>
-                    <p class="gallery-text">Hvorfor købe nyt, når man kan printe en reservedel? Jeg designer løsninger til huset og værkstedet.</p>
+                    <span class="gallery-title">Fra tanke til fysisk produkt</span>
+                    <p class="gallery-text">
+                        Det fascinerende er processen. Man får en idé til en "tosset" løsning, tegner den, og timer senere står man med produktet i hånden. Det tvinger mig til konstant at tænke ud af boksen.
+                    </p>
                 </div>
             </div>
 
             <div class="gallery-item">
-                <img src="images/3d_print2.jpg" alt="3D Print Projekt 2" class="gallery-img" onerror="this.src='https://placehold.co/600x400?text=Upload:+3d_print2.jpg'">
+                <img src="images/3d_print2.jpg" alt="Læringskurven" class="gallery-img" onerror="this.src='https://placehold.co/600x400?text=CAD+Design'">
                 <div class="gallery-caption">
-                    <span class="gallery-title">Prototyping & CAD</span>
-                    <p class="gallery-text">Jeg arbejder i CAD-software for at tegne mine egne designs helt fra bunden, før de sendes til print.</p>
+                    <span class="gallery-title">Læringskurven</span>
+                    <p class="gallery-text">
+                        Jeg startede med firkanter og "rough edges". I dag designer jeg komplekse løsninger. Hvis jeg støder på en begrænsning, finder jeg svaret på YouTube. Jeg accepterer ikke, at noget "ikke kan lade sig gøre".
+                    </p>
                 </div>
             </div>
 
             <div class="gallery-item">
-                <img src="images/3d_print3.jpg" alt="3D Print Setup" class="gallery-img" onerror="this.src='https://placehold.co/600x400?text=Upload:+3d_print3.jpg'">
+                <img src="images/3d_print3.jpg" alt="Setup" class="gallery-img" onerror="this.src='https://placehold.co/600x400?text=Mit+Setup'">
                 <div class="gallery-caption">
-                    <span class="gallery-title">Farmen</span>
-                    <p class="gallery-text">Et kig på mit setup. At kalibrere, opgradere og vedligeholde printerne er en stor del af sporten.</p>
+                    <span class="gallery-title">Problemløsning i hjemmet</span>
+                    <p class="gallery-text">
+                        Det mindste hængsel eller en manglende reservedel bliver til et projekt. 3D-print har lært mig at se løsninger på alle mulige små ting i hverdagen.
+                    </p>
                 </div>
             </div>
         </div>
@@ -386,7 +423,3 @@
     </script>
 </body>
 </html>
-
-
-
-
