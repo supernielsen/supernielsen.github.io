@@ -257,6 +257,84 @@
             position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; background: rgba(0,0,0,0.5); padding: 5px 10px; border-radius: 20px; font-size: 12px; z-index: 4; pointer-events: none; white-space: nowrap;
         }
 
+
+        /* TERMINAL STYLING */
+        #term-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px; /* Eller left: 20px hvis den er i vejen */
+            background: #1e1e1e;
+            color: #33ff00;
+            border: 1px solid #33ff00;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: transform 0.2s;
+        }
+        #term-btn:hover { transform: scale(1.1); box-shadow: 0 0 15px #33ff00; }
+        
+        .terminal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7); /* Mørk baggrund */
+            backdrop-filter: blur(4px); /* Slører hjemmesiden bagved */
+            z-index: 9999;
+            display: flex; justify-content: center; align-items: center;
+            animation: fadeIn 0.2s;
+        }
+        
+        .terminal-window {
+            width: 700px;
+            max-width: 90%;
+            height: 500px;
+            background: #0f0f0f; /* Næsten sort */
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+            display: flex; flex-direction: column;
+            border: 1px solid #333;
+            font-family: 'Courier New', monospace; /* Hacker font */
+            overflow: hidden;
+        }
+        
+        .terminal-header {
+            background: #2d2d2d;
+            padding: 10px 15px;
+            display: flex; justify-content: space-between; align-items: center;
+            color: #bbb;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #333;
+        }
+        .dots span { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 6px; }
+        .close-term { cursor: pointer; font-size: 1.5rem; line-height: 0.5; }
+        .close-term:hover { color: white; }
+        
+        .terminal-body {
+            padding: 20px;
+            color: #e0e0e0;
+            flex-grow: 1;
+            overflow-y: auto; /* Scrollbar hvis meget tekst */
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        
+        /* Input feltet styling */
+        .input-line { display: flex; align-items: center; margin-top: 5px; }
+        .prompt { color: #33ff00; margin-right: 10px; font-weight: bold; }
+        .cmd-highlight { color: #33ff00; background: rgba(51, 255, 0, 0.1); padding: 0 4px; }
+        #term-input {
+            background: transparent; border: none; color: white;
+            font-family: inherit; font-size: inherit; flex-grow: 1; outline: none;
+            caret-color: #33ff00; /* Grøn blinkende markør */
+        }
+        
+        /* Scrollbar styling til terminalen */
+        .terminal-body::-webkit-scrollbar { width: 10px; }
+        .terminal-body::-webkit-scrollbar-track { background: #0f0f0f; }
+        .terminal-body::-webkit-scrollbar-thumb { background: #333; border-radius: 5px; }
+
+        
     </style>
 </head>
 <body>
@@ -627,6 +705,33 @@
         </a>
     </div>
 
+    <button onclick="toggleTerminal()" id="term-btn" title="Åbn Terminal (CTRL + K)">
+    <i class="fa-solid fa-terminal"></i>
+</button>
+
+<div id="terminal-modal" class="terminal-overlay" style="display:none;" onclick="closeOnOutsideClick(event)">
+    <div class="terminal-window">
+        <div class="terminal-header">
+            <div class="dots">
+                <span style="background:#ff5f56"></span> <span style="background:#ffbd2e"></span> <span style="background:#27c93f"></span> </div>
+            <span class="term-title">patrick@portfolio:~</span>
+            <span class="close-term" onclick="toggleTerminal()">×</span>
+        </div>
+        
+        <div class="terminal-body" id="term-body" onclick="document.getElementById('term-input').focus()">
+            <div class="term-line">Velkommen til Patricks Terminal v1.0.</div>
+            <div class="term-line">Skriv <span class="cmd-highlight">'help'</span> for at se en liste over kommandoer.</div>
+            <br>
+            
+            <div id="term-output"></div>
+
+            <div class="input-line">
+                <span class="prompt">guest@portfolio:~$</span>
+                <input type="text" id="term-input" autocomplete="off" spellcheck="false">
+            </div>
+        </div>
+    </div>
+</div>
     <script>
         // 1. DARK MODE FUNKTION
         function toggleTheme() {
@@ -704,9 +809,137 @@ Mvh Patrick
             document.getElementById(sectionId).classList.add('active');
             element.classList.add('active');
         }
+        // --- TERMINAL LOGIC ---
+
+// 1. Åbn/Luk funktioner
+function toggleTerminal() {
+    const term = document.getElementById('terminal-modal');
+    const input = document.getElementById('term-input');
+    
+    if (term.style.display === 'none') {
+        term.style.display = 'flex';
+        setTimeout(() => input.focus(), 50); // Fokusér inputtet automatisk
+    } else {
+        term.style.display = 'none';
+    }
+}
+
+// Luk hvis man klikker uden for vinduet
+function closeOnOutsideClick(e) {
+    if (e.target.id === 'terminal-modal') {
+        toggleTerminal();
+    }
+}
+
+// Lyt efter CTRL + K for at åbne (Power user feature)
+document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey && e.key === 'k') {
+        e.preventDefault();
+        toggleTerminal();
+    }
+});
+
+// 2. Kommando Systemet
+const inputField = document.getElementById('term-input');
+const outputDiv = document.getElementById('term-output');
+const termBody = document.getElementById('term-body');
+
+inputField.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        const input = this.value.trim(); // Fjern mellemrum før/efter
+        const command = input.toLowerCase(); // Gør alt til små bogstaver
+        
+        if (input !== "") {
+            // 1. Skriv brugerens kommando i historikken
+            printOutput(`<span class="prompt">guest@portfolio:~$</span> ${input}`);
+            
+            // 2. Find svaret (Her er "Hjernen")
+            processCommand(command);
+        }
+        
+        // 3. Tøm input feltet og scroll ned
+        this.value = '';
+        termBody.scrollTop = termBody.scrollHeight;
+    }
+});
+
+function processCommand(cmd) {
+    let response = "";
+
+    switch(cmd) {
+        case 'help':
+            response = `
+            <div style="color: #bbb; margin-bottom: 10px;">Tilgængelige kommandoer:</div>
+            <table style="width: 100%; color: #fff;">
+                <tr><td style="width:100px; color:#33ff00">cv</td><td>Downloader mit CV som PDF</td></tr>
+                <tr><td style="color:#33ff00">skills</td><td>Viser teknisk stak & kompetencer</td></tr>
+                <tr><td style="color:#33ff00">contact</td><td>Viser kontaktinfo</td></tr>
+                <tr><td style="color:#33ff00">coffee</td><td>Er jeg klar til kaffe?</td></tr>
+                <tr><td style="color:#33ff00">clear</td><td>Rydder terminalen</td></tr>
+                <tr><td style="color:#33ff00">exit</td><td>Lukker terminalen</td></tr>
+            </table>`;
+            break;
+
+        case 'cv':
+            response = "Initierer download af 'Patrick_Nielsen_CV.pdf' ...<br>Færdig! ✅";
+            // Denne linje åbner faktisk din PDF fil (sørg for filnavn matcher)
+            setTimeout(() => window.open('Patrick_Nielsen_CV.pdf', '_blank'), 1000);
+            break;
+
+        case 'skills':
+            response = `
+            [LOADING MODULES]...
+            --------------------
+            > Project Management ... [EXPERT]
+            > Test Management ...... [EXPERT]
+            > Root Cause Analysis .. [EXPERT]
+            > Python Scripting ..... [INTERMEDIATE]
+            > 3D CAD & Print ....... [MAKER LEVEL]
+            > Coffee Consumption ... [CRITICAL HIGH]
+            --------------------
+            Status: Ready for deployment.
+            `;
+            break;
+
+        case 'contact':
+            response = "Email: <a href='mailto:supernielsen@mensa.dk' style='color:#33ff00'>supernielsen@mensa.dk</a><br>LinkedIn: <a href='https://www.linkedin.com/in/patrick-mosskov-nielsen-3652662a3/' target='_blank' style='color:#33ff00'>Patrick Mosskov Nielsen</a>";
+            break;
+            
+        case 'coffee':
+            response = "System check: Kaffetank niveau lavt.<br>Resultat: <strong>Ja, lad os tage et kaffemøde!</strong> ☕";
+            break;
+
+        case 'sudo':
+        case 'sudo hire patrick':
+            response = "Permission denied: Du skal kontakte Patrick først for at få admin rettigheder. Prøv 'contact'. 😉";
+            break;
+
+        case 'clear':
+            outputDiv.innerHTML = "";
+            return; // Returner tidligt så vi ikke printer tom linje
+
+        case 'exit':
+            toggleTerminal();
+            return;
+
+        default:
+            response = `Kommandoen '${cmd}' blev ikke fundet. Skriv <span class="cmd-highlight">help</span> for hjælp.`;
+    }
+
+    // Print svaret til skærmen med en lille forsinkelse for "effekt"
+    printOutput(response);
+}
+
+function printOutput(html) {
+    const div = document.createElement('div');
+    div.innerHTML = html;
+    div.style.marginBottom = "10px";
+    outputDiv.appendChild(div);
+}
     </script>
 </body>
 </html>
+
 
 
 
