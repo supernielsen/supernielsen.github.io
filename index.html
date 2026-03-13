@@ -18,6 +18,7 @@
             --card-bg: #ffffff;
             --header-bg: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             --section-alt: #f8fafc;
+            --inner-box: #f1f5f9;
             --border-color: #e2e8f0;
         }
 
@@ -29,6 +30,7 @@
             --card-bg: #1e293b;   
             --header-bg: #020617; 
             --section-alt: #0f172a; 
+            --inner-box: #0f172a;
             --border-color: #334155;
         }
 
@@ -64,7 +66,6 @@
             font-size: 0.9rem;
             transition: 0.3s;
         }
-        .theme-switch:hover { background: rgba(255,255,255,0.2); }
 
         header h1 { font-size: 2.5rem; margin-bottom: 10px; }
         header .title { color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
@@ -112,6 +113,31 @@
         .job-company { color: var(--accent); font-weight: 600; }
         .skill-tag { background: var(--section-alt); color: var(--text); border: 1px solid var(--border-color); padding: 5px 10px; border-radius: 15px; font-size: 0.85rem; margin-right: 5px; display: inline-block; margin-top: 5px; }
 
+        .cv-results-box {
+            background: var(--inner-box); 
+            padding: 15px; 
+            border-radius: 8px; 
+            margin-top: 15px; 
+            border: 1px solid var(--border-color);
+        }
+        .cv-results-box ul { padding-left: 20px; font-size: 0.95rem; color: var(--text); }
+        .cv-results-box li { margin-bottom: 8px; }
+
+        .vision-container {
+            background: #0f172a; 
+            color: #f8fafc; 
+            padding: 30px; 
+            border-radius: 12px; 
+            margin-top: 40px; 
+            position: relative; 
+            overflow: hidden;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+        [data-theme="dark"] .vision-container {
+            background: #020617;
+            border-color: var(--accent);
+        }
+
         .contact-bar { text-align: center; margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border-color); color: var(--text); }
         .contact-btn { display: inline-block; background: var(--primary); color: var(--bg); padding: 10px 25px; border-radius: 50px; text-decoration: none; margin-top: 10px; font-weight: 600; transition: background 0.3s; }
         .contact-btn:hover { background: var(--accent); color: white; }
@@ -119,8 +145,8 @@
         .comp-container { position: relative; width: 100%; height: 200px; overflow: hidden; border-radius: 8px; cursor: ew-resize; }
         .comp-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
         .comp-foreground-img { width: 50%; border-right: 3px solid white; z-index: 2; }
-        .comp-slider { position: absolute; -webkit-appearance: none; appearance: none; width: 100%; height: 100%; background: transparent; z-index: 3; margin: 0; outline: none; }
-        .comp-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 10px; height: 200px; cursor: ew-resize; }
+        .comp-slider { position: absolute; appearance: none; width: 100%; height: 100%; background: transparent; z-index: 3; margin: 0; outline: none; }
+        .comp-slider::-webkit-slider-thumb { appearance: none; width: 10px; height: 200px; cursor: ew-resize; }
         .comp-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; background: rgba(0,0,0,0.5); padding: 5px 10px; border-radius: 20px; font-size: 12px; z-index: 4; pointer-events: none; white-space: nowrap; }
 
         #term-btn { position: fixed; bottom: 20px; right: 20px; background: #1e1e1e; color: #33ff00; border: 1px solid #33ff00; padding: 15px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.2s; }
@@ -145,9 +171,9 @@
             <i class="fa-solid fa-moon"></i> / <i class="fa-solid fa-sun"></i>
         </button>
         <h1>Patrick Mosskov Nielsen</h1>
-        <div class="title">Projektleder & Test Manager | Strategisk AI Lead</div>
+        <div class="title">Projektleder & Test Manager | Business Analyst</div>
         <div style="display: flex; justify-content: center;">
-            <p class="tagline typewriter">Menneskelig ledelse og AI i praksis.</p>
+            <p class="tagline typewriter">Teknologidrevet Ledelse med AI-resultater.</p>
         </div>
         <p class="tagline" style="margin-top: 5px; font-size: 1rem; opacity: 0.8;">
             Jeg bygger bro mellem komplekse processer og teknologiske løsninger.
@@ -182,7 +208,7 @@
         <div style="height: 4px; background: var(--accent); width: 50px; margin-bottom: 30px;"></div>
 
         <p style="margin-bottom: 30px; font-size: 1.1rem; font-style: italic; color: var(--text);">
-            "Som projektleder sikrer jeg leverancen – men som praktikeren, der har arbejdet sig op fra gulvet, forstår jeg maskinrummet. Jeg leder ikke ved at kontrollere, men ved at optimere. Min filosofi er enkel: <strong>Teknologi – og herunder AI – skal fjerne de opgaver, medarbejderne hader at lave.</strong> Ved at fjerne de trivielle rutiner frigør jeg teamets faglige dømmekraft, så de kan fokusere dér, hvor de skaber målbare resultater."
+            "Som projektleder sikrer jeg leverancen – men som praktikeren, der har arbejdet mig op fra gulvet, forstår jeg maskinrummet. Jeg leder ikke ved at kontrollere, men ved at optimere. Min filosofi er enkel: <strong>Teknologi – og herunder AI – skal fjerne de opgaver, medarbejderne hader at lave.</strong> Ved at fjerne de trivielle rutiner frigør jeg teamets faglige dømmekraft, så de kan fokusere dér, hvor de skaber målbare resultater."
         </p>
 
         <div style="background: var(--card-bg); border-radius: 8px; padding: 25px; margin-bottom: 40px; border-left: 5px solid var(--primary); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
@@ -198,7 +224,8 @@
             <div>
                 <strong style="color: var(--accent); font-size: 1.1rem;"><i class="fa-solid fa-bolt"></i> Automatisering af bureaukrati</strong>
                 <p style="margin-top: 5px; font-size: 0.95rem; color: var(--text);">
-                    Jeg accepterer ikke ineffektivitet. Hos Motorstyrelsen byggede jeg scripts, der automatiserede komplekse beregninger og hjalp med automatisk dannelse af breve. Det handlede ikke om at erstatte medarbejdere, men om at fjerne de sten i skoen, der drænede deres tid.
+                    Jeg accepterer ikke "plejer", hvis det er ineffektivt. Hos Motorstyrelsen byggede jeg scripts, der automatiserede komplekse beregninger og hjalp med automatisk dannelse af breve, så de var klar til afsendelse med korrekte beregninger og lovhenvisninger.
+                    <br><em>Resultat: En proces, der normalt ville tage uger i manuel behandlingstid, blev eksekveret automatisk på en brøkdel af tiden.</em>
                 </p>
             </div>
         </div>
@@ -207,23 +234,34 @@
             <div class="job-role">Projektleder & Test Manager | Business Analyst</div>
             <div class="job-company">Auto IT | 2024 - I dag</div>
             <p>I denne rolle bringer jeg hele min historik i spil. Jeg kender systemerne indefra og forstår forretningens behov.</p>
-            <ul style="margin-top: 15px; padding-left: 20px; font-size: 0.95rem; color: var(--text);">
-                <li style="margin-bottom: 8px;"><strong>Transition & Udbud:</strong> Ansvarlig for at drive projektet sikkert fra udarbejdelse af udbud, til at vinde udbuddet og nu helt frem til stabil drift.</li>
-                <li style="margin-bottom: 8px;"><strong>Business Analysis & Proxy PO:</strong> Analyserer forretningskrav og beskriver dem i detaljerede user stories, så udviklingsteamet kan eksekvere effektivt.</li>
-                <li style="margin-bottom: 8px;"><strong>Test Management:</strong> Sikrer kvaliteten i leverancen gennem struktureret test og validering af løsningen.</li>
-            </ul>
+            
+            <div class="cv-results-box">
+                <strong style="color: var(--primary); display:block; margin-bottom:5px;">Nøgleopgaver:</strong>
+                <ul>
+                    <li><strong>Transition & Udbud:</strong> Ansvarlig for at drive projektet sikkert fra udarbejdelse af udbud, til at vinde udbuddet og nu helt frem til stabil drift.</li>
+                    <li><strong>Business Analysis & Proxy PO:</strong> Analyserer forretningskrav og beskriver dem i detaljerede user stories, så udviklingsteamet kan eksekvere effektivt.</li>
+                    <li><strong>Test Management:</strong> Sikrer kvaliteten i leverancen gennem struktureret test og validering af løsningen.</li>
+                </ul>
+            </div>
+            <div style="margin-top: 15px;">
+                <span class="skill-tag">Projektledelse</span>
+                <span class="skill-tag">Kravspecificering</span>
+                <span class="skill-tag">Transition</span>
+            </div>
         </div>
 
         <div class="timeline-item">
             <div class="job-role">Procesejer</div>
             <div class="job-company">Motorstyrelsen | 2021 - 2024</div>
-            <div style="background: var(--section-alt); padding: 15px; border-radius: 5px; margin-top: 10px; border: 1px solid var(--border-color);">
+            <p>Her rykkede jeg fra drift til udvikling. Jeg optimerede processerne og var bindeleddet, der sikrede, at komplekse regler blev omsat til korrekt systemadfærd.</p>
+            
+            <div class="cv-results-box">
                 <strong style="color: var(--primary); display:block; margin-bottom:5px;">Nøgleansvar & Resultater:</strong>
-                <ul style="padding-left: 20px; font-size: 0.9rem; color: var(--text);">
-                    <li style="margin-bottom: 6px;"><strong>Automatisering:</strong> Designede logikken bag fuld- og semiautomatiske værktøjer, hvilket reducerede manuelle processer markant.</li>
-                    <li style="margin-bottom: 6px;"><strong>Data-projekter:</strong> Drev omfattende analyseprojekter for at identificere og beskrive komplekse datafejl.</li>
-                    <li style="margin-bottom: 6px;"><strong>Leverandørstyring:</strong> Sparringspartner for eksterne leverandører. Gennemgik løsningsbeskrivelser kritisk og sikrede, at DMR blev udviklet efter kravene.</li>
-                    <li style="margin-bottom: 6px;"><strong>Problem Management:</strong> Stod for fejlfinding og udarbejdelse af den endelige løsning på komplekse datarettelser.</li>
+                <ul>
+                    <li><strong>Automatisering:</strong> Designede logikken bag fuld- og semiautomatiske værktøjer, hvilket reducerede manuelle processer markant.</li>
+                    <li><strong>Data-projekter:</strong> Drev omfattende analyseprojekter for at identificere og beskrive komplekse datafejl.</li>
+                    <li><strong>Leverandørstyring:</strong> Sparringspartner for eksterne leverandører. Gennemgik løsningsbeskrivelser kritisk og sikrede, at DMR blev udviklet efter kravene.</li>
+                    <li><strong>Problem Management:</strong> Stod for fejlfinding og udarbejdelse af den endelige løsning på komplekse datarettelser.</li>
                 </ul>
             </div>
         </div>
@@ -231,11 +269,12 @@
         <div class="timeline-item">
             <div class="job-role">Værdifastsætter & Teknisk Specialist</div>
             <div class="job-company">Motorstyrelsen | 2016 - 2021</div>
-            <div style="background: var(--section-alt); padding: 15px; border-radius: 5px; margin-top: 10px; border: 1px solid var(--border-color);">
-                <ul style="padding-left: 20px; font-size: 0.9rem; color: var(--text);">
-                    <li style="margin-bottom: 6px;"><strong>Fagligt Ansvar:</strong> Eneansvarlig på landsplan for komplekse specialområder (herunder ID-tab).</li>
-                    <li style="margin-bottom: 6px;"><strong>System-fundament:</strong> Udvikling og vedligehold af de centrale beregningsskemaer for DMR.</li>
-                    <li style="margin-bottom: 6px;"><strong>Kvalitet & Compliance:</strong> Udførte den lovpligtige kvalitetssikring og kontrol.</li>
+            <div class="cv-results-box">
+                <ul>
+                    <li><strong>Fagligt Ansvar:</strong> Eneansvarlig på landsplan for komplekse specialområder (herunder ID-tab).</li>
+                    <li><strong>System-fundament:</strong> Udvikling og vedligehold af de centrale beregningsskemaer for DMR.</li>
+                    <li><strong>Driftsstyring:</strong> Varetog dele af driftsplanlægning og ressourcestyring på tværs af afdelinger.</li>
+                    <li><strong>Kvalitet & Compliance:</strong> Udførte den lovpligtige kvalitetssikring og kontrol.</li>
                 </ul>
             </div>
         </div>
@@ -243,10 +282,26 @@
         <div class="timeline-item" style="border-left-color: #64748b;"> 
             <div class="job-role">Automekaniker (Det logiske fundament)</div>
             <div class="job-company">Techcollege & Værksteder | 2007 - 2012</div>
-            <p><strong>Min tilgang til analyse stammer herfra.</strong> Uanset om det er en IT-proces eller en motor, bruger jeg Root Cause Analysis til at finde og fikse problemet permanent.</p>
+            
+            <div class="cv-results-box">
+                <strong style="color: var(--primary); display:block; margin-bottom:5px;">Analytisk fundament:</strong>
+                <p style="font-size: 0.95rem; color: var(--text);">
+                    Her blev min tilgang til kompleks problemløsning grundlagt. Uanset om det er en IT-proces eller en motor, bruger jeg den samme systematik:
+                </p>
+                <ul style="margin-top: 10px;">
+                    <li><strong>Root Cause Analysis:</strong> Identificering af rodårsagen fremfor blot at symptombehandle.</li>
+                    <li><strong>Praktisk Logik:</strong> En metodisk og fejlsikker tilgang til komplekse systemer.</li>
+                    <li><strong>Dokumentation:</strong> Præcis beskrivelse af løsninger, så fejl ikke opstår igen.</li>
+                </ul>
+            </div>
+            <div style="margin-top: 10px;">
+                <span class="skill-tag">Systematisk Fejlsøgning</span>
+                <span class="skill-tag">Root Cause Analysis</span>
+                <span class="skill-tag">Praktisk Logik</span>
+            </div>
         </div>
 
-        <div style="background: var(--primary); color: white; padding: 30px; border-radius: 12px; margin-top: 40px; position: relative; overflow: hidden;">
+        <div class="vision-container">
             <div style="position: relative; z-index: 2;">
                 <h3 style="color: var(--accent); margin-bottom: 10px;">Min vision som leder</h3>
                 <p style="font-style: italic; font-size: 1.1rem; line-height: 1.4;">
@@ -254,7 +309,7 @@
                     <strong style="color: var(--accent);">Mit mål er, at hver medarbejder oplever, at deres indsats virkelig gør en forskel – og vokser i processen.</strong>"
                 </p>
             </div>
-            <i class="fa-solid fa-quote-right" style="position: absolute; right: 20px; bottom: -10px; font-size: 100px; opacity: 0.1;"></i>
+            <i class="fa-solid fa-quote-right" style="position: absolute; right: 20px; bottom: -10px; font-size: 100px; opacity: 0.05; color: white;"></i>
         </div>
     </section>
 
@@ -275,7 +330,7 @@
                 <img src="images/mc_tur.jpg" alt="Motorcykeltur" class="gallery-img" onerror="this.src='https://placehold.co/600x400?text=MC+Tur'">
                 <div class="gallery-caption">
                     <span class="gallery-title"><i class="fa-solid fa-motorcycle"></i> Perspektiv på to hjul</span>
-                    <p class="gallery-text">Det handler ikke om fart, men om at "reboote" hjernen. I det sekund jeg sætter mig på maskinen, tømmes hovedet.</p>
+                    <p class="gallery-text">Det handler om at "reboote" hjernen. I det sekund jeg sætter mig på maskinen, tømmes hovedet.</p>
                 </div>
             </div>
             <div class="gallery-item">
@@ -372,7 +427,7 @@
             <span class="close-term" onclick="toggleTerminal()">×</span>
         </div>
         <div class="terminal-body" id="term-body" onclick="document.getElementById('term-input').focus()">
-            <div class="term-line">Velkommen til Patricks Terminal v2.1.</div>
+            <div class="term-line">Velkommen til Patricks Terminal v2.3.</div>
             <div class="term-line">Skriv <span class="cmd-highlight">'help'</span> for kommandoer.</div>
             <br>
             <div id="term-output"></div>
