@@ -315,8 +315,7 @@
             </div>
         </div>
     </div>
-
-    <script>
+<script>
         const Portfolio = {
             els: {},
             history: [],
@@ -379,10 +378,12 @@
                     this.printHTML(`
                     <div style="color: #bbb; margin-bottom: 10px;">Tilgængelige kommandoer:</div>
                     <table style="width: 100%; color: #fff;">
-                        <tr><td style="width:120px; color:var(--term-info)">cv</td><td>Downloader mit CV som PDF</td></tr>
+                        <tr><td style="width:140px; color:var(--term-info)">cv</td><td>Downloader mit CV som PDF</td></tr>
                         <tr><td style="color:var(--term-info)">skills</td><td>Viser teknisk stak & kompetencer</td></tr>
-                        <tr><td style="color:var(--term-info)">philosophy</td><td>Min tilgang til ledelse og AI</td></tr>
-                        <tr><td style="color:var(--term-info)">coffee</td><td>Er jeg klar til kaffe?</td></tr>
+                        <tr><td style="color:var(--term-info)">ai-team</td><td>Viser min agent-arkitektur</td></tr>
+                        <tr><td style="color:var(--term-info)">philosophy</td><td>Min tilgang til ledelse</td></tr>
+                        <tr><td style="color:var(--term-info)">coffee-status</td><td>System check af kaffemaskinen</td></tr>
+                        <tr><td style="color:var(--term-info)">contact</td><td>Viser kontaktinfo</td></tr>
                         <tr><td style="color:var(--term-info)">clear</td><td>Rydder terminalen</td></tr>
                         <tr><td style="color:var(--term-info)">exit</td><td>Lukker terminalen</td></tr>
                     </table>`);
@@ -395,20 +396,31 @@
                     > Root Cause Analysis .. <span style="color: var(--term-success)">[EXPERT]</span>
                     > Python Scripting ..... <span style="color: #ffbd2e">[INTERMEDIATE]</span>
                     > 3D CAD & Print ....... <span style="color: var(--term-success)">[MAKER LEVEL]</span>
-                    > Coffee Consumption ... <span style="color: var(--term-error)">[CRITICAL HIGH]</span>
                     --------------------
                     Status: Ready for deployment.
                     `);
+                } else if (cmd === 'ai-team') {
+                    this.printHTML(`
+                    <span style="color: var(--term-info)">[INITIATING AI AGENT STRUCTURE]</span><br>
+                    > Expert 1: Contract Analysis (Data: Anonymized Contracts)<br>
+                    > Expert 2: Delivery Manager (Data: Deliverable Logs)<br>
+                    > Expert 3: Technical Critic (Data: System Specs)<br>
+                    --------------------------------------------------<br>
+                    <span style="color: var(--term-success)">RESULT: 100% facts-based output. Hallucinations: 0%.</span><br>
+                    Status: Virtual team ready for deployment.
+                    `);
                 } else if (cmd === 'philosophy') {
-                    this.printLine(`"Teknologi, og herunder AI, skal fjerne de opgaver, folk hader at lave, så de kan fokusere dér, hvor de skaber målbare resultater."`, "info");
-                } else if (cmd === 'coffee') {
-                    this.printHTML(`System check: Kaffetank niveau lavt.<br>Resultat: <strong>Ja, lad os tage et kaffemøde!</strong> ☕`, "success");
+                    this.printLine(`"Leadership is about playing your team good. A leader with poor employees is simply a poor leader. My goal: Use technical insight to empower, not to micromanage."`, "info");
+                } else if (cmd === 'coffee-status') {
+                    this.printHTML(`Machine: <span style="color: var(--term-success)">OK</span>. | Beans: Dark Roast. | Logic: Enabled.<br><br>Ready for a talk about leadership or AI strategy? Just send an email via 'contact'!`);
+                } else if (cmd === 'contact') {
+                    this.printHTML(`Email: <a href='mailto:supernielsen@mensa.dk' style='color:var(--term-info)'>supernielsen@mensa.dk</a><br>LinkedIn: <a href='https://www.linkedin.com/in/patrick-mosskov-nielsen-3652662a3/' target='_blank' style='color:var(--term-info)'>Patrick Mosskov Nielsen</a>`);
                 } else if (cmd === 'exit') {
                     this.toggleTerminal(false);
                 } else if (cmd === 'clear') {
                     this.els.output.innerHTML = "";
                 } else if (cmd === 'sudo' || cmd === 'sudo hire patrick') {
-                    this.printLine(`Permission denied.`, "error");
+                    this.printLine(`Permission denied. Please execute 'contact' to request admin privileges.`, "error");
                 } else {
                     this.printLine(`Fejl: '${cmd}' ikke fundet. Skriv 'help'.`, "error");
                 }
