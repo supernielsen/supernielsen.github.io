@@ -11,6 +11,7 @@
     
     <style>
         :root {
+            /* STANDARD (LYS TEMA) */
             --primary: #0f172a; 
             --accent: #3b82f6;  
             --text: #334155;    
@@ -21,6 +22,7 @@
             --border-color: #e2e8f0;
         }
 
+        /* DARK MODE (HACKER TEMA) */
         [data-theme="dark"] {
             --primary: #f1f5f9;   
             --accent: #38bdf8;    
@@ -43,6 +45,7 @@
             transition: background-color 0.3s, color 0.3s;
         }
 
+        /* Header Section */
         header {
             background: var(--header-bg);
             color: white;
@@ -184,7 +187,7 @@
         </button>
 
         <h1>Patrick Mosskov Nielsen</h1>
-        <div class="title">Projektleder & Test Manager | Strategisk AI Lead</div>
+        <div class="title">Projektleder & Test Manager | Business Analyst</div>
         
         <div style="display: flex; justify-content: center;">
             <p class="tagline typewriter">Menneskelig ledelse og AI i praksis.</p>
@@ -204,7 +207,7 @@
         <div class="nav-card" onclick="showSection('personal', this)">
             <div class="nav-icon"><i class="fa-solid fa-motorcycle"></i></div>
             <div class="nav-title">Bag Facaden</div>
-            <div class="nav-desc">Far, MC & Mennesket</div>
+            <div class="nav-desc">Far, MC & Værksted</div>
         </div>
         <div class="nav-card" onclick="showSection('maker', this)">
             <div class="nav-icon"><i class="fa-solid fa-cube"></i></div>
@@ -224,7 +227,7 @@
         <div style="height: 4px; background: var(--accent); width: 50px; margin-bottom: 30px;"></div>
 
         <p style="margin-bottom: 30px; font-size: 1.1rem; font-style: italic; color: var(--text);">
-            "Som projektleder sikrer jeg leverancen – men som tidligere mekaniker forstår jeg maskinrummet. Jeg leder ikke ved at kontrollere, men ved at optimere. Min filosofi er enkel: <strong>Teknologi, og herunder AI, skal fjerne de opgaver, folk hader at lave.</strong> Ved at fjerne de trivielle rutiner frigør jeg teamets faglige dømmekraft, så de kan fokusere dér, hvor de skaber målbare resultater og personlig vækst."
+            "Som projektleder sikrer jeg leverancen – men som praktikeren, der har arbejdet sig op fra gulvet, forstår jeg maskinrummet. Jeg leder ikke ved at kontrollere, men ved at optimere. Min filosofi er enkel: <strong>Teknologi, og herunder AI, skal fjerne de opgaver, folk hader at lave.</strong> Ved at fjerne de trivielle rutiner frigør jeg teamets faglige dømmekraft, så de kan fokusere dér, hvor de skaber målbare resultater."
         </p>
 
         <div style="background: var(--card-bg); border-radius: 8px; padding: 25px; margin-bottom: 40px; border-left: 5px solid var(--primary); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
@@ -233,14 +236,15 @@
             <div style="margin-bottom: 20px;">
                 <strong style="color: var(--accent); font-size: 1.1rem;"><i class="fa-solid fa-robot"></i> Strategisk AI Orchestration</strong>
                 <p style="margin-top: 5px; font-size: 0.95rem; color: var(--text);">
-                    I arbejdet med komplekse udbud har jeg designet workflows med specialiserede AI-agenter. Ved at anonymisere kernedata og lade agenterne fungere som hhv. analytikere og kritikere, har jeg reduceret behandlingstiden fra dage til minutter – altid med mennesket som den endelige kvalitetssikrer.
+                    I arbejdet med komplekse udbud har jeg designet workflows med specialiserede AI-agenter, der fungerer som hhv. analytikere, kritikere og faglige eksperter. Ved at anonymisere kernedata og orkestrere disse agenter, har jeg gjort omfattende kontrakter gennemskuelige og forenklet udarbejdelsen af dokumentationsmateriale markant. Det har reduceret behandlingstiden fra flere dage til få minutter – altid med mennesket som den endelige kvalitetssikrer.
                 </p>
             </div>
 
             <div>
                 <strong style="color: var(--accent); font-size: 1.1rem;"><i class="fa-solid fa-bolt"></i> Automatisering af bureaukrati</strong>
                 <p style="margin-top: 5px; font-size: 0.95rem; color: var(--text);">
-                    Jeg accepterer ikke ineffektivitet. Hos Motorstyrelsen byggede jeg scripts, der automatiserede komplekse beregninger og brev-dannelse. Det handlede ikke om at erstatte medarbejdere, men om at fjerne de sten i skoen, der drænede deres tid.
+                    Jeg accepterer ikke "plejer", hvis det er ineffektivt. Hos Motorstyrelsen byggede jeg scripts, der automatiserede beregninger og hjalp med automatisk dannelse af breve, så de var klar til afsendelse med korrekte beregninger og lovhenvisninger.
+                    <br><em>Resultat: En proces, der normalt ville tage uger i manuel behandlingstid, blev eksekveret automatisk på en brøkdel af tiden.</em>
                 </p>
             </div>
         </div>
@@ -248,29 +252,75 @@
         <div class="timeline-item">
             <div class="job-role">Projektleder & Test Manager | Business Analyst</div>
             <div class="job-company">Auto IT | 2024 - I dag</div>
-            <p>Ansvarlig for at drive projektet sikkert gennem udbud og transition til stabil drift. Her fletter jeg AI-optimering ind som et værktøj til at styrke leverancens kvalitet.</p>
+            
+            <p>I denne rolle bringer jeg hele min historik i spil. Jeg kender systemerne indefra og forstår forretningens behov.</p>
+            
+            <ul style="margin-top: 15px; padding-left: 20px; font-size: 0.95rem; color: var(--text);">
+                <li style="margin-bottom: 8px;"><strong>Transition & Udbud:</strong> Ansvarlig for at drive projektet sikkert fra udarbejdelse af udbud, til at vinde udbuddet og nu helt frem til stabil drift.</li>
+                <li style="margin-bottom: 8px;"><strong>Business Analysis & Proxy PO:</strong> Analyserer forretningskrav og beskriver dem i detaljerede user stories, så udviklingsteamet kan eksekvere effektivt.</li>
+                <li style="margin-bottom: 8px;"><strong>Test Management:</strong> Sikrer kvaliteten i leverancen gennem struktureret test og validering af løsningen.</li>
+            </ul>
+            
             <div style="margin-top: 15px;">
                 <span class="skill-tag">Projektledelse</span>
-                <span class="skill-tag">Udbud & Transition</span>
-                <span class="skill-tag">AI Workflows</span>
+                <span class="skill-tag">Kravspecificering</span>
+                <span class="skill-tag">Transition</span>
             </div>
         </div>
 
         <div class="timeline-item">
             <div class="job-role">Procesejer</div>
             <div class="job-company">Motorstyrelsen | 2021 - 2024</div>
-            <p>Bindeleddet mellem komplekse regler og systemadfærd. Drev analyseprojekter og designede logikken bag fuldautomatiske værktøjer.</p>
+            <p>Her rykkede jeg fra drift til udvikling. Jeg optimerede processerne og var bindeleddet, der sikrede, at komplekse regler blev omsat til korrekt systemadfærd.</p>
+            
+            <div style="background: var(--section-alt); padding: 15px; border-radius: 5px; margin-top: 10px; border: 1px solid var(--border-color);">
+                <strong style="color: var(--primary); display:block; margin-bottom:5px;">Nøgleansvar & Resultater:</strong>
+                <ul style="padding-left: 20px; font-size: 0.9rem; color: var(--text);">
+                    <li style="margin-bottom: 6px;"><strong>Automatisering:</strong> Designede logikken bag fuld- og semiautomatiske værktøjer, hvilket reducerede manuelle processer markant.</li>
+                    <li style="margin-bottom: 6px;"><strong>Data-projekter:</strong> Drev omfattende analyseprojekter for at identificere og beskrive komplekse datafejl. Udarbejdede de nødvendige workarounds og værktøjer til at håndtere sagerne.</li>
+                    <li style="margin-bottom: 6px;"><strong>Leverandørstyring:</strong> Sparringspartner for eksterne leverandører. Gennemgik løsningsbeskrivelser kritisk og sikrede, at DMR blev udviklet efter kravene.</li>
+                    <li style="margin-bottom: 6px;"><strong>Problem Management:</strong> Stod for fejlfinding og udarbejdelse af den endelige løsning på komplekse datarettelser.</li>
+                </ul>
+            </div>
+
             <div style="margin-top: 10px;">
                 <span class="skill-tag">Procesoptimering</span>
                 <span class="skill-tag">Datakvalitet</span>
-                <span class="skill-tag">Automatisering</span>
+                <span class="skill-tag">Kravspecifikation</span>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="job-role">Værdifastsætter & Teknisk Specialist</div>
+            <div class="job-company">Motorstyrelsen | 2016 - 2021</div>
+            
+            <div style="background: var(--section-alt); padding: 15px; border-radius: 5px; margin-top: 10px; border: 1px solid var(--border-color);">
+                <strong style="color: var(--primary); display:block; margin-bottom:5px;">Specialist-opgaver:</strong>
+                <ul style="padding-left: 20px; font-size: 0.9rem; color: var(--text);">
+                    <li style="margin-bottom: 6px;"><strong>Fagligt Ansvar:</strong> Eneansvarlig på landsplan for komplekse specialområder (herunder ID-tab) i en længere periode.</li>
+                    <li style="margin-bottom: 6px;"><strong>System-fundament:</strong> Ansvarlig for udvikling og vedligehold af de centrale beregningsskemaer, der dannede grundlag for logikken i de nuværende IT-systemer.</li>
+                    <li style="margin-bottom: 6px;"><strong>Driftsstyring:</strong> Varetog dele af driftsplanlægning og ressourcestyring på tværs af flere afdelinger.</li>
+                    <li style="margin-bottom: 6px;"><strong>Procesdokumentation:</strong> Udarbejdede detaljerede procesbeskrivelser (A-Z) for hele værdifastsættelsesområdet.</li>
+                    <li style="margin-bottom: 6px;"><strong>Kvalitet & Compliance:</strong> Udførte den lovpligtige kvalitetssikring og kontrol af kollegaers sagsbehandling.</li>
+                </ul>
+            </div>
+
+            <div style="margin-top: 10px;">
+                <span class="skill-tag">Domæneekspertise</span>
+                <span class="skill-tag">Driftsledelse</span>
+                <span class="skill-tag">Kvalitetssikring</span>
             </div>
         </div>
 
         <div class="timeline-item" style="border-left-color: #64748b;"> 
             <div class="job-role">Automekaniker (Det logiske fundament)</div>
             <div class="job-company">Techcollege & Værksteder | 2007 - 2012</div>
-            <p><strong>Min tilgang til analyse stammer herfra.</strong> Uanset om det er en IT-proces eller en motor, bruger jeg Root Cause Analysis til at finde og fikse problemet permanent.</p>
+            <p><strong>Min tilgang til analyse stammer herfra.</strong></p>
+            <p>Uanset om det er en IT-proces eller en motor, bruger jeg samme logik: Analyser symptomerne, find rodårsagen (Root Cause Analysis) og beskriv løsningen præcist.</p>
+            <div style="margin-top: 10px;">
+                <span class="skill-tag">Systematisk Fejlsøgning</span>
+                <span class="skill-tag">Root Cause Analysis</span>
+            </div>
         </div>
         
         <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border-color);">
@@ -287,6 +337,17 @@
                 <i class="fa-brands fa-linkedin"></i> Se fuld profil på LinkedIn &rarr;
             </a>
         </p>
+
+        <div style="background: var(--primary); color: white; padding: 30px; border-radius: 12px; margin-top: 40px; position: relative; overflow: hidden;">
+            <div style="position: relative; z-index: 2;">
+                <h3 style="color: var(--accent); margin-bottom: 10px;">Min vision som leder</h3>
+                <p style="font-style: italic; font-size: 1.1rem; line-height: 1.4;">
+                    "Succesfuld ledelse handler om at frigøre potentialet i hver enkelt medarbejder. Jeg bruger min tekniske indsigt og dataunderstøttede værktøjer til at skabe rammerne for høj kvalitet, gennemsigtighed og klare prioriteringer, så teamet kan levere konkrete resultater. 
+                    <strong style="color: var(--accent);">Mit mål er, at hver medarbejder oplever, at deres indsats virkelig gør en forskel – og vokser i processen.</strong>"
+                </p>
+            </div>
+            <i class="fa-solid fa-quote-right" style="position: absolute; right: 20px; bottom: -10px; font-size: 100px; opacity: 0.1;"></i>
+        </div>
     </section>
 
     <section id="personal" class="content-section">
@@ -301,7 +362,7 @@
                 <div class="gallery-caption">
                     <span class="gallery-title"><i class="fa-solid fa-child-reaching"></i> 50/50 = 100% Fokus</span>
                     <p class="gallery-text">
-                        50/50 ordningen betyder, at jeg er 100% på, når vi er sammen. Min vigtigste opgave er at være en stærk far og et ordentligt forbillede. Jeg er hans far, hans guide og hans makker.
+                        Min vigtigste opgave er at være en stærk far og et ordentligt forbillede. Vi fordyber os i alt fra perleplader til teknik. Jeg er hans far, hans guide og hans makker.
                     </p>
                 </div>
             </div>
@@ -311,27 +372,17 @@
                 <div class="gallery-caption">
                     <span class="gallery-title"><i class="fa-solid fa-motorcycle"></i> Perspektiv på to hjul</span>
                     <p class="gallery-text">
-                        Det handler ikke om fart, men om at "reboote" hjernen. I det sekund jeg sætter mig på maskinen, tømmes hovedet. Det er her, jeg finder roen på trods af at jeg altid er tilgængelig.
+                        Det handler om at "reboote" hjernen. I det sekund jeg sætter mig på maskinen, tømmes hovedet. Jeg ser omgivelserne på en helt anden måde.
                     </p>
                 </div>
             </div>
             
             <div class="gallery-item">
-                <img src="images/mc_plan.jpg" alt="Python Route Plan" class="gallery-img" onerror="this.src='https://placehold.co/600x400?text=Python+Ruteplan'">
-                <div class="gallery-caption">
-                    <span class="gallery-title"><i class="fa-brands fa-python"></i> Logik i friheden</span>
-                    <p class="gallery-text">
-                        Selv frihed kræver planlægning. Jeg bruger Python-scripts til at optimere mine ruter og segmenter. Den perfekte kombination af min indre analytiker og eventyreren.
-                    </p>
-                </div>
-            </div>
-
-            <div class="gallery-item">
                 <img src="images/vaerksted.jpg" alt="Værkstedet" class="gallery-img" onerror="this.src='https://placehold.co/600x400?text=Værksted'">
                 <div class="gallery-caption">
                     <span class="gallery-title"><i class="fa-solid fa-wrench"></i> Håndværket</span>
                     <p class="gallery-text">
-                        At kunne fikse ting fysisk holder min problemløsning skarp. Der er en tilfredsstillelse i at se et konkret resultat, som man ikke altid får bag en skærm.
+                        Selvom jeg arbejder med IT, slipper jeg aldrig håndværket. At kunne fikse ting fysisk holder min problemløsning skarp.
                     </p>
                 </div>
             </div>
@@ -340,10 +391,13 @@
 
     <section id="maker" class="content-section">
         <h2>Maker Space</h2>
+        
         <div style="background: var(--section-alt); padding: 20px; border-radius: 8px; margin-bottom: 30px; border-left: 5px solid var(--accent);">
-            <p style="font-size: 1.1rem; font-style: italic; font-weight: 600; color: var(--primary);">"Det har jeg aldrig prøvet før, så det klarer jeg helt sikkert!"</p>
+            <p style="font-size: 1.1rem; font-style: italic; font-weight: 600; color: var(--primary);">
+                "Det har jeg aldrig prøvet før, så det klarer jeg helt sikkert!"
+            </p>
             <p style="margin-top: 10px; font-size: 0.95rem; color: var(--text);">
-                Jeg har 10 års erfaring med 3D-print (FDM/Resin). Mit værksted rummer alt fra reflow stationer til mit trofaste Zoyi ZT703S multimeter. Jeg bygger mine egne løsninger, fordi nysgerrighed er min største drivkraft.
+                Selvlært i CAD og 3D-print i over 10 år. Mit setup tæller både FDM og resin, reflow station og mit Zoyi ZT703S med indbygget oscilloskop til hardware-fejlfinding.
             </p>
         </div>
 
@@ -357,7 +411,7 @@
                 </div>
                 <div class="gallery-caption">
                     <span class="gallery-title">Reverse Engineering</span>
-                    <p class="gallery-text">Fra udgået del til ny-designet 3D-print. Problemet løst med skydelære og CAD.</p>
+                    <p class="gallery-text">Problemet løst med en skydelære, CAD og en 3D-printer.</p>
                 </div>
             </div>
             
@@ -370,18 +424,22 @@
                 </div>
                 <div class="gallery-caption">
                     <span class="gallery-title">Root Cause i praksis</span>
-                    <p class="gallery-text">Redningsaktion af en hotend begravet i plastik. Tålmodighed og den rette teknik.</p>
+                    <p class="gallery-text">Redningsaktion af en hotend begravet i plastik.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <div class="contact-bar">
-        <p>Leder du efter en projektleder, der forstår teknikken og tør bruge AI strategisk?</p>
-        <a href="mailto:supernielsen@mensa.dk" class="contact-btn">Kontakt Patrick</a>
+        <p>Vil du høre mere om mine projekter eller min leder-profil?</p>
+        <a href="mailto:supernielsen@mensa.dk" class="contact-btn">
+            <i class="fa-regular fa-envelope"></i> Kontakt Patrick
+        </a>
     </div>
 
-    <button onclick="toggleTerminal()" id="term-btn"><i class="fa-solid fa-terminal"></i></button>
+    <button onclick="toggleTerminal()" id="term-btn" title="Åbn Terminal (CTRL + K)">
+        <i class="fa-solid fa-terminal"></i>
+    </button>
 
 <div id="terminal-modal" class="terminal-overlay" style="display:none;" onclick="closeOnOutsideClick(event)">
     <div class="terminal-window">
@@ -469,23 +527,20 @@
         let response = "";
         switch(cmd) {
             case 'help':
-                response = "Tilgængelige: cv, ai-strategy, philosophy, skills, contact, coffee, clear";
+                response = "Tilgængelige: cv, ai-strategy, philosophy, skills, contact, clear";
                 break;
             case 'ai-strategy':
-                response = "Agent-based orchestration. Fokus: Data-anonymisering og automatisering af komplekse administrative bunker. Resultat: Fra dage til minutter.";
+                response = "Orchestration af specialiserede agenter (Analytiker, Kritiker, Ekspert). Fokus: Gennemskuelige kontrakter og data-anonymisering.";
                 break;
             case 'philosophy':
-                response = "Lederens job er at fjerne 'det de hader'. Spil teamet gode gennem gennemsigtighed og de rette værktøjer.";
+                response = "Ledelse = Empowerment. Fjern de opgaver de hader, spil teamet gode, og skab vækst i processen.";
                 break;
             case 'cv':
-                response = "Åbner Patrick_Nielsen_CV.pdf...";
+                response = "Åbner PDF...";
                 setTimeout(() => window.open('Patrick_Nielsen_CV.pdf', '_blank'), 1000);
                 break;
             case 'skills':
-                response = "Project Mgmt [EXPERT], AI Implementation [ADVANCED], Root Cause Analysis [EXPERT], Python [INTERMEDIATE]";
-                break;
-            case 'contact':
-                response = "supernielsen@mensa.dk";
+                response = "Project Mgmt [EXPERT], AI Agent Deployment [ADVANCED], Business Analysis & Proxy PO [EXPERT]";
                 break;
             case 'clear':
                 outputDiv.innerHTML = "";
