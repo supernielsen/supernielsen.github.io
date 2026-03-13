@@ -1,6 +1,4 @@
-// Indkapsler hele applikationen for at undgå global scope pollution
 (function() {
-    // DOM Elementer cachet fra start
     const els = {
         themeBtn: document.getElementById('theme-toggle'),
         navCards: document.querySelectorAll('.nav-card'),
@@ -12,18 +10,11 @@
         termForm: document.getElementById('term-form'),
         termInput: document.getElementById('term-input'),
         termOutput: document.getElementById('term-output'),
-        termBody: document.getElementById('term-body'),
-        termWindow: document.querySelector('.terminal-window')
+        termBody: document.getElementById('term-body')
     };
 
-    // State
-    const termState = {
-        history: [],
-        historyIdx: -1,
-        loadingInterval: null
-    };
+    const termState = { history: [], historyIdx: -1, loadingInterval: null };
 
-    // Initialisering
     function init() {
         setupTheme();
         setupNavigation();
@@ -31,7 +22,6 @@
         setupTerminalEvents();
     }
 
-    // --- TEMA LOGIK & A11Y ---
     function setupTheme() {
         const isDark = localStorage.getItem('theme') === 'dark';
         if (isDark) {
@@ -58,12 +48,10 @@
         els.themeBtn.setAttribute('aria-label', isDark ? "Skift til lyst tema" : "Skift til mørkt tema");
     }
 
-    // --- NAVIGATION ---
     function setupNavigation() {
         els.navCards.forEach(card => {
             card.addEventListener('click', () => {
                 const targetId = card.getAttribute('data-target');
-                
                 els.sections.forEach(s => s.classList.toggle('active', s.id === targetId));
                 els.navCards.forEach(c => {
                     const isActive = c === card;
@@ -74,20 +62,15 @@
         });
     }
 
-    // --- GPU-ACCELERERET SLIDER ---
     function setupSliders() {
         els.sliders.forEach(slider => {
             const container = slider.closest('.comp-container');
             slider.addEventListener('input', (e) => {
-                // Sender værdien direkte til CSS-variablen. GPU'en klarer resten uden DOM-søgninger.
                 container.style.setProperty('--pos', `${e.target.value}%`);
             });
         });
     }
-
-    // --- TERMINAL LOGIK & COMMAND PATTERN ---
     
-    // Command Dictionary (Erstatter det massive if/else mareridt)
     const commands = {
         'help': () => printHTML(`
             <div style="color: #bbb; margin-bottom: 10px;">Tilgængelige kommandoer:</div>
@@ -126,19 +109,13 @@
         'sudo': () => printText(`Permission denied. Please execute 'contact' to request admin privileges.`, "error")
     };
     
-    // Alias for sjov
     commands['sudo hire patrick'] = commands['sudo'];
 
     function setupTerminalEvents() {
         els.termOpen.addEventListener('click', () => toggleTerminal(true));
         els.termClose.addEventListener('click', () => toggleTerminal(false));
-        
-        // Luk ved at klikke uden for vinduet
-        els.termModal.addEventListener('click', (e) => {
-            if (e.target === els.termModal) toggleTerminal(false);
-        });
+        els.termModal.addEventListener('click', (e) => { if (e.target === els.termModal) toggleTerminal(false); });
 
-        // Håndtering af form submit (Enter)
         els.termForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const cmd = els.termInput.value.trim().toLowerCase();
@@ -149,24 +126,18 @@
             
             printText(`guest@portfolio:~$ ${cmd}`, "normal");
 
-            // Execute via Command Pattern
-            if (commands[cmd]) {
-                commands[cmd]();
-            } else {
-                printText(`Fejl: '${cmd}' ikke fundet. Skriv 'help'.`, "error");
-            }
+            if (commands[cmd]) commands[cmd]();
+            else printText(`Fejl: '${cmd}' ikke fundet. Skriv 'help'.`, "error");
             
             els.termInput.value = "";
             els.termBody.scrollTo({ top: els.termBody.scrollHeight, behavior: 'smooth' });
         });
 
-        // Historik via piletaster
         els.termInput.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowUp') { e.preventDefault(); browseHistory(1); }
             if (e.key === 'ArrowDown') { e.preventDefault(); browseHistory(-1); }
         });
 
-        // Luk med Escape
         document.addEventListener('keydown', (e) => { 
             if (e.key === 'Escape' && els.termModal.style.display === 'flex') toggleTerminal(false); 
         });
@@ -174,11 +145,8 @@
 
     function toggleTerminal(show) {
         els.termModal.style.display = show ? 'flex' : 'none';
-        if (show) {
-            setTimeout(() => els.termInput.focus(), 50);
-        } else {
-            if(termState.loadingInterval) clearInterval(termState.loadingInterval);
-        }
+        if (show) setTimeout(() => els.termInput.focus(), 50);
+        else if(termState.loadingInterval) clearInterval(termState.loadingInterval);
     }
 
     function browseHistory(dir) {
@@ -191,7 +159,7 @@
 
     function printText(text, type = "normal") {
         const div = document.createElement('div');
-        div.textContent = text; // Sikker mod XSS
+        div.textContent = text; 
         if (type === "error") div.style.color = "var(--term-error)";
         else if (type === "success") div.style.color = "var(--term-success)";
         else if (type === "info") div.style.color = "var(--term-info)";
@@ -201,7 +169,7 @@
 
     function printHTML(htmlStr) {
         const div = document.createElement('div');
-        div.innerHTML = htmlStr; // OK her, da vi kun spytter statisk, hardcoded data ud fra command objektet
+        div.innerHTML = htmlStr; 
         div.style.marginBottom = "8px";
         els.termOutput.appendChild(div);
     }
@@ -226,7 +194,5 @@
         }, 1500);
     }
 
-    // Start maskinen, når DOM'en er klar
     document.addEventListener('DOMContentLoaded', init);
-
 })();
