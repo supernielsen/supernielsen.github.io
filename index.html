@@ -79,10 +79,10 @@
             margin: 0 auto;
             letter-spacing: .05em;
             width: 0; 
-            animation: typing 3.5s steps(38, end) forwards, blink-caret .75s step-end infinite;
+            animation: typing 3.5s steps(35, end) forwards, blink-caret .75s step-end infinite;
         }
 
-        @keyframes typing { from { width: 0 } to { width: 33ch; } }
+        @keyframes typing { from { width: 0 } to { width: 35ch; } }
         @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--accent) } }
         @media (max-width: 600px) { .typewriter { white-space: normal; border-right: none; animation: none; width: auto; } }
 
@@ -123,6 +123,7 @@
         .cv-results-box ul { padding-left: 20px; font-size: 0.95rem; color: var(--text); }
         .cv-results-box li { margin-bottom: 8px; }
 
+        /* Vision boks Dark Mode Fix */
         .vision-container {
             background: #0f172a; 
             color: #f8fafc; 
@@ -173,7 +174,7 @@
         <h1>Patrick Mosskov Nielsen</h1>
         <div class="title">Projektleder & Test Manager | Business Analyst</div>
         <div style="display: flex; justify-content: center;">
-            <p class="tagline typewriter">Teknologidrevet Ledelse med AI-resultater.</p>
+            <p class="tagline typewriter">Menneskelig ledelse og AI i praksis</p>
         </div>
         <p class="tagline" style="margin-top: 5px; font-size: 1rem; opacity: 0.8;">
             Jeg bygger bro mellem komplekse processer og teknologiske løsninger.
@@ -270,6 +271,7 @@
             <div class="job-role">Værdifastsætter & Teknisk Specialist</div>
             <div class="job-company">Motorstyrelsen | 2016 - 2021</div>
             <div class="cv-results-box">
+                <strong style="color: var(--primary); display:block; margin-bottom:5px;">Specialist-opgaver:</strong>
                 <ul>
                     <li><strong>Fagligt Ansvar:</strong> Eneansvarlig på landsplan for komplekse specialområder (herunder ID-tab).</li>
                     <li><strong>System-fundament:</strong> Udvikling og vedligehold af de centrale beregningsskemaer for DMR.</li>
@@ -427,7 +429,7 @@
             <span class="close-term" onclick="toggleTerminal()">×</span>
         </div>
         <div class="terminal-body" id="term-body" onclick="document.getElementById('term-input').focus()">
-            <div class="term-line">Velkommen til Patricks Terminal v2.3.</div>
+            <div class="term-line">Velkommen til Patricks Terminal v2.5.</div>
             <div class="term-line">Skriv <span class="cmd-highlight">'help'</span> for kommandoer.</div>
             <br>
             <div id="term-output"></div>
