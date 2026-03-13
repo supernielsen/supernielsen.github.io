@@ -8,6 +8,13 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; script-src 'self';">
 
     <meta name="description" content="Profil og portefølje for Patrick Mosskov Nielsen. Projektleder og Business Analyst med fokus på teknologidrevet ledelse og AI-orkestrering.">
+    <meta property="og:title" content="Patrick Mosskov Nielsen | Projektleder & AI Strategist">
+    <meta property="og:description" content="Fra værkstedsgulvet til AI-agenter. Se mine projekter og min tilgang til ledelse.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Patrick Mosskov Nielsen | Projektleder | AI Strategist">
+    <meta name="twitter:description" content="Menneskelig ledelse og AI i praksis.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -53,6 +60,10 @@
         @keyframes typing { from { width: 0 } to { width: 100% } }
         @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--accent) } }
 
+        @media (max-width: 480px) {
+            .typewriter { white-space: normal; animation: blink-caret .75s step-end infinite; max-width: 100%; border-right: .15em solid var(--accent); overflow-wrap: break-word; }
+        }
+
         .nav-container { display: flex; justify-content: center; gap: 20px; margin: -30px auto 0; padding: 0 15px; flex-wrap: wrap; z-index: 10; position: relative; max-width: 1200px; }
         .nav-card { background: var(--card-bg); padding: 20px; border-radius: 12px; width: 280px; text-align: center; cursor: pointer; transition: 0.2s; border: 2px solid transparent; box-shadow: 0 10px 15px rgba(0,0,0,0.1); color: var(--text); font-family: inherit; font-size: inherit; outline: none; }
         .nav-card:focus-visible { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5); }
@@ -83,15 +94,14 @@
         /* GPU-Accelereret Slider */
         .comp-container { position: relative; width: 100%; height: 250px; overflow: hidden; border-radius: 8px; --pos: 50%; }
         .comp-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
-        /* Bruger clip-path for at undgå layout thrashing */
         .comp-foreground { clip-path: polygon(0 0, var(--pos) 0, var(--pos) 100%, 0 100%); z-index: 2; will-change: clip-path; }
-        /* Bruger translateX for silkeblød GPU-rendering */
         .comp-icon { position: absolute; top: 50%; left: 0; transform: translate(calc(var(--pos) - 50%), -50%); color: white; background: rgba(0,0,0,0.5); padding: 5px 10px; border-radius: 20px; z-index: 4; pointer-events: none; will-change: transform; border-left: 3px solid white; border-right: 3px solid white; }
         .comp-slider { position: absolute; width: 100%; height: 100%; opacity: 0; z-index: 3; cursor: ew-resize; margin: 0; top: 0; left: 0; }
 
         .vision-container { background: #0f172a; color: #f8fafc; padding: 40px 30px; border-radius: 12px; margin: 40px 0; position: relative; overflow: hidden; border: 1px solid rgba(59, 130, 246, 0.3); }
         [data-theme="dark"] .vision-container { background: #020617; }
         .vision-title { color: var(--accent); margin-bottom: 10px; font-size: 1.4rem; }
+        .vision-quote { font-style: italic; }
 
         .contact-btn { display: inline-block; padding: 10px 25px; background: var(--primary); color: white; border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.3s; }
         [data-theme="dark"] .contact-btn { background: var(--accent); color: var(--btn-text); }
@@ -142,17 +152,17 @@
                 <a href="Patrick_Nielsen_CV.pdf" download type="application/pdf" class="contact-btn">Download CV</a>
             </div>
 
-            <p class="text-italic">"Som projektleder sikrer jeg leverancen men som praktikeren, der har arbejdet mig op fra gulvet, forstår jeg maskinrummet. Jeg leder ikke ved at kontrollere, men ved at optimere. Min filosofi er enkel: <strong class="text-accent">Teknologi, og herunder AI, skal fjerne de opgaver, folk hader at lave</strong>."</p>
+            <p class="text-italic">"Som projektleder sikrer jeg leverancen men som praktikeren, der har arbejdet mig op fra gulvet, forstår jeg maskinrummet. Jeg leder ikke ved at kontrollere, men ved at optimere. Min filosofi er enkel: <strong class="text-accent">Teknologi, og herunder AI, skal fjerne de opgaver, folk hader at lave</strong>. Ved at fjerne de trivielle rutiner frigør jeg teamets faglige dømmekraft, så de kan fokusere dér, hvor de skaber målbare resultater."</p>
             
             <article class="card">
                 <h3>Strategisk Ledelse gennem teknisk empowerment</h3>
                 <div class="inner-box">
                     <strong class="text-accent"><i class="fa-solid fa-robot" aria-hidden="true"></i> Strategisk AI Orchestration</strong>
-                    <p>I arbejdet med komplekse udbud har jeg designet workflows med specialiserede AI-agenter. Ved at anonymisere kernedata og orkestrere disse agenter, har jeg gjort omfattende kontrakter gennemskuelige og reduceret behandlingstiden fra flere dage til få minutter – altid med mennesket som den endelige kvalitetssikrer.</p>
+                    <p>I arbejdet med komplekse udbud har jeg designet workflows med specialiserede AI-agenter, der fungerer som hhv. analytikere, kritikere og faglige eksperter. Ved at anonymisere kernedata og orkestrere disse agenter, har jeg gjort omfattende kontrakter gennemskuelige og forenklet udarbejdelsen af dokumentationsmateriale markant. Det har reduceret behandlingstiden fra flere dage til få minutter – altid med mennesket som den endelige kvalitetssikrer.</p>
                 </div>
                 <div class="inner-box">
                     <strong class="text-accent"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Automatisering af bureaukrati</strong>
-                    <p>Hos Motorstyrelsen byggede jeg scripts, der automatiserede komplekse beregninger og hjalp med automatisk dannelse af breve. En proces, der normalt ville tage uger, blev eksekveret automatisk på en brøkdel af tiden.</p>
+                    <p>Jeg accepterer ikke "plejer", hvis det er ineffektivt. Hos Motorstyrelsen byggede jeg scripts, der automatiserede komplekse beregninger og hjalp med automatisk dannelse af breve, så de var klar til afsendelse med korrekte beregninger og lovhenvisninger. Resultat: En proces, der normalt ville tage uger i manuel behandlingstid, blev eksekveret automatisk på en brøkdel af tiden.</p>
                 </div>
             </article>
             
@@ -160,10 +170,11 @@
                 <span class="job-role">Projektleder & Test Manager | Business Analyst</span>
                 <span class="job-company">Auto IT | 2024 - I dag</span>
                 <div class="inner-box">
+                    <p>I denne rolle bringer jeg hele min historik i spil. Jeg kender systemerne indefra (fra min tid i Motorstyrelsen) og forstår forretningens behov.</p>
                     <ul class="list-spaced">
-                        <li><strong>Transition & Udbud:</strong> Fra udarbejdelse af udbud til stabil drift.</li>
-                        <li><strong>Business Analysis & Proxy PO:</strong> Analyserer forretningskrav og beskriver dem i detaljerede user stories.</li>
-                        <li><strong>Test Management:</strong> Sikrer kvaliteten i leverancen gennem struktureret test.</li>
+                        <li><strong>Transition & Udbud:</strong> Ansvarlig for at drive projektet sikkert fra udarbejdelse af udbud, til at vinde udbuddet og nu helt frem til stabil drift.</li>
+                        <li><strong>Business Analysis & Proxy PO:</strong> Analyserer forretningskrav og beskriver dem i detaljerede user stories, så udviklingsteamet kan eksekvere effektivt.</li>
+                        <li><strong>Test Management:</strong> Sikrer kvaliteten i leverancen gennem struktureret test og validering af løsningen.</li>
                     </ul>
                 </div>
             </article>
@@ -172,23 +183,81 @@
                 <span class="job-role">Procesejer</span>
                 <span class="job-company">Motorstyrelsen | 2021 - 2024</span>
                 <div class="inner-box">
+                    <p>Her rykkede jeg fra drift til udvikling. Jeg optimerede processerne og var bindeleddet, der sikrede, at komplekse regler blev omsat til korrekt systemadfærd.</p>
                     <ul class="list-spaced">
-                        <li><strong>Automatisering:</strong> Designede logikken bag fuld- og semiautomatiske værktøjer.</li>
+                        <li><strong>Automatisering:</strong> Designede logikken bag fuld- og semiautomatiske værktøjer, hvilket reducerede manuelle processer markant.</li>
+                        <li><strong>Data-projekter:</strong> Drev omfattende analyseprojekter for at identificere og beskrive komplekse datafejl. Udarbejdede de nødvendige workarounds og værktøjer til at håndtere sagerne, mens systemfejlen blev udbedret.</li>
+                        <li><strong>Leverandørstyring:</strong> Sparringspartner for eksterne leverandører. Gennemgik løsningsbeskrivelser kritisk og sikrede, at DMR blev udviklet efter kravene.</li>
                         <li><strong>Problem Management:</strong> Stod for fejlfinding og udarbejdelse af den endelige løsning på komplekse datarettelser.</li>
                     </ul>
                 </div>
             </article>
-            
-            </section>
+
+            <article class="timeline-item">
+                <span class="job-role">Værdifastsætter & Teknisk Specialist</span>
+                <span class="job-company">Motorstyrelsen | 2016 - 2021</span>
+                <div class="inner-box">
+                    <ul class="list-spaced">
+                        <li><strong>Fagligt Ansvar:</strong> Eneansvarlig på landsplan for komplekse specialområder (herunder ID-tab) i en længere periode.</li>
+                        <li><strong>System-fundament:</strong> Ansvarlig for udvikling og vedligehold af de centrale beregningsskemaer, der dannede grundlag for logikken i de nuværende IT-systemer.</li>
+                        <li><strong>Driftsstyring:</strong> Varetog dele af driftsplanlægning og ressourcestyring på tværs af flere afdelinger for at sikre overholdelse af frister.</li>
+                        <li><strong>Procesdokumentation:</strong> Udarbejdede detaljerede procesbeskrivelser (A-Z) for hele værdifastsættelsesområdet.</li>
+                        <li><strong>Kvalitet & Compliance:</strong> Udførte den lovpligtige kvalitetssikring og kontrol af kollegaers sagsbehandling for at garantere lovlighed til punkt og prikke.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="timeline-item timeline-item-alt"> 
+                <span class="job-role">Automekaniker (Logisk fundament)</span>
+                <span class="job-company">Techcollege & Værksteder | 2007 - 2012</span>
+                <div class="inner-box">
+                    <p><strong>Min tilgang til analyse stammer herfra.</strong> Uanset om jeg analyserer en kompleks systemfejl i en IT-proces eller fejlsøger på en motor, bruger jeg samme logik: find rodårsagen (Root Cause Analysis) og beskriv løsningen præcist, så problemet kan blive fikset permanent.</p>
+                </div>
+            </article>
+
+            <div class="vision-container">
+                <h3 class="vision-title">Min vision som leder</h3>
+                <p class="vision-quote">"Succesfuld ledelse handler om at frigøre potentialet i hver enkelt medarbejder. Jeg bruger min tekniske indsigt og dataunderstøttede værktøjer til at skabe rammerne for høj kvalitet, gennemsigtighed og klare prioriteringer, så teamet kan levere konkrete resultater. Mit mål er, at hver medarbejder oplever, at deres indsats virkelig gør en forskel – og vokser i processen."</p>
+            </div>
+        </section>
 
         <section id="personal" class="content-section">
             <h2>Bag Facaden</h2>
+            <p class="mb-30">Når jeg tager arbejdshandskerne af, handler mit liv om nærvær og perspektiv. Jeg tror på, at man skal gøre tingene 100% uanset om det gælder forældreskab eller fritid.</p>
             <div class="gallery-grid">
+                <article class="gallery-item">
+                    <img src="images/mig_og_soen.jpg" width="800" height="600" loading="lazy" alt="Far og søn fordybet i aktivitet" class="gallery-img">
+                    <div class="gallery-caption">
+                        <span class="gallery-title"><i class="fa-solid fa-child-reaching" aria-hidden="true"></i> 50/50 = 100% Fokus</span>
+                        <p class="gallery-text">50/50 ordningen betyder, at jeg er 100% på, når vi er sammen. Min vigtigste opgave er at være en stærk far og et ordentligt forbillede. Vi fordyber os i alt fra perleplader til teknik, for jeg tror på, at man skaber tryghed gennem både faste rammer og fælles oplevelser. Jeg er hans far, hans guide og hans makker.</p>
+                    </div>
+                </article>
                 <article class="gallery-item">
                     <img src="images/mc_tur.jpg" width="800" height="600" loading="lazy" alt="Patrick på motorcykel i naturen" class="gallery-img">
                     <div class="gallery-caption">
                         <span class="gallery-title"><i class="fa-solid fa-motorcycle" aria-hidden="true"></i> Perspektiv på to hjul</span>
-                        <p class="gallery-text">Det handler ikke om fart, men om at "reboote" hjernen.</p>
+                        <p class="gallery-text">Det handler ikke om fart, men om at "reboote" hjernen. I det sekund jeg sætter mig på maskinen, tømmes hovedet. Jeg ser naturen, dyrene og omgivelserne på en helt anden måde end fra en bil. Det er her, jeg finder roen på trods af at jeg altid har telefonen i øret og er tilgængelig.</p>
+                    </div>
+                </article>
+                <article class="gallery-item">
+                    <img src="images/mc_fix.jpg" width="800" height="600" loading="lazy" alt="Fejlsøgning på nedbrudt motorcykel" class="gallery-img">
+                    <div class="gallery-caption">
+                        <span class="gallery-title"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i> Nedbrud? Ingen panik.</span>
+                        <p class="gallery-text">Billedet er fra en ferie, hvor teknikken svigtede midt i ingenting. Hvor andre ser en ødelagt ferie, ser jeg en opgave. Jeg koblede hovedet fra ferie-mode og over i fejlsøgnings-mode.</p>
+                    </div>
+                </article>
+                <article class="gallery-item">
+                    <img src="images/mc_plan.jpg" width="800" height="600" loading="lazy" alt="Planlægning af rute med Python" class="gallery-img">
+                    <div class="gallery-caption">
+                        <span class="gallery-title"><i class="fa-brands fa-python" aria-hidden="true"></i> Projektledelse på to hjul</span>
+                        <p class="gallery-text">Selv frihed kræver planlægning. Jeg brugte et Python-script til at splitte hele min rute op i logiske segmenter og optimere køretiden. Det er den perfekte kombination af min indre projektleder, nørden der elsker data, og eventyreren der vil ud og opleve verden.</p>
+                    </div>
+                </article>
+                <article class="gallery-item">
+                    <img src="images/vaerksted.jpg" width="800" height="600" loading="lazy" alt="Fysisk arbejde i værkstedet" class="gallery-img">
+                    <div class="gallery-caption">
+                        <span class="gallery-title"><i class="fa-solid fa-wrench" aria-hidden="true"></i> Håndværket</span>
+                        <p class="gallery-text">Selvom jeg arbejder med IT, slipper jeg aldrig håndværket. At kunne fikse ting fysisk holder min problemløsning skarp. Der er en tilfredsstillelse i at se et konkret resultat, som man ikke altid får bag en skærm.</p>
                     </div>
                 </article>
             </div>
@@ -196,7 +265,25 @@
 
         <section id="maker" class="content-section">
             <h2>Maker Space</h2>
+            <div class="card">
+                <p><strong>"Det har jeg aldrig prøvet før, så det klarer jeg helt sikkert!"</strong></p>
+                <p class="mt-10">Det er min tilgang til læring. Jeg er selvlært i CAD og 3D-print, fordi jeg er nysgerrig. Jeg startede for over 10 år siden med at bygge min egen printer sammen med en kammerat – længe før det blev mainstream.</p>
+            </div>
             <div class="gallery-grid">
+                <article class="gallery-item">
+                    <img src="images/3d_print1.jpg" width="800" height="600" loading="lazy" alt="Prototype fra 3D-printer" class="gallery-img">
+                    <div class="gallery-caption">
+                        <span class="gallery-title">Fra tanke til fysisk produkt</span>
+                        <p class="gallery-text">Det fascinerende er processen. Man får en idé til en "tosset" løsning, tegner den, og timer senere står man med produktet i hånden. Det tvinger mig til konstant at tænke ud af boksen.</p>
+                    </div>
+                </article>
+                <article class="gallery-item">
+                    <img src="images/3d_print2.jpg" width="800" height="600" loading="lazy" alt="Kompleks model i CAD-program" class="gallery-img">
+                    <div class="gallery-caption">
+                        <span class="gallery-title">Læringskurven</span>
+                        <p class="gallery-text">Jeg startede med firkanter og "rough edges". I dag designer jeg komplekse modeller. Hvis jeg støder på en begrænsning, finder jeg svaret på YouTube. Jeg accepterer ikke, at noget "ikke kan lade sig gøre".</p>
+                    </div>
+                </article>
                 <article class="gallery-item">
                     <div class="comp-container">
                         <input type="range" min="0" max="100" value="50" class="comp-slider" aria-label="Sammenligning af Mercedes reservedel før og efter">
@@ -206,7 +293,26 @@
                     </div>
                     <div class="gallery-caption">
                         <span class="gallery-title">Reverse Engineering (Træk i billedet)</span>
-                        <p class="gallery-text">Problemet løst med en skydelære og CAD.</p>
+                        <p class="gallery-text">Her mødes mekanikeren og nørden. Træk i slideren for at se forvandlingen fra den udgåede, defekte del til min ny-designede og 3D-printede reservedel. Problemet løst med en skydelære og CAD.</p>
+                    </div>
+                </article>
+                <article class="gallery-item">
+                    <img src="images/filament_toys.png" width="800" height="600" loading="lazy" alt="Legetøj printet af filament-rester" class="gallery-img">
+                    <div class="gallery-caption">
+                        <span class="gallery-title"><i class="fa-solid fa-recycle" aria-hidden="true"></i> Zero Waste & Motorik</span>
+                        <p class="gallery-text">Jeg smider aldrig de sidste meter filament ud. I stedet printer jeg små samleled, som min søn og jeg bruger til at bygge komplekse figurer. Det er ressourceoptimering i børnehøjde: Vi udnytter materialet til sidste dråbe, og samtidig træner vi hans finmotorik og mønsterforståelse gennem leg.</p>
+                    </div>
+                </article>
+                <article class="gallery-item">
+                    <div class="comp-container">
+                        <input type="range" min="0" max="100" value="50" class="comp-slider" aria-label="Sammenligning af hotend før og efter redningsaktion">
+                        <div class="comp-icon"><i class="fa-solid fa-left-right" aria-hidden="true"></i></div>
+                        <img src="images/hotend_after.jpg" width="800" height="600" alt="Hotend repareret og som ny" class="comp-img comp-foreground">
+                        <img src="images/hotend_before.jpg" width="800" height="600" alt="Hotend dækket af smeltet plastik" class="comp-img">
+                    </div>
+                    <div class="gallery-caption">
+                        <span class="gallery-title">Kreativ (og lidt farlig) problemløsning</span>
+                        <p class="gallery-text">Træk i slideren for at se redningsaktionen. En hotend begravet i en klump af smeltet plastik. Med rensebenzin, varme og lidt forsigtig ild fik jeg smeltet plastikken væk. Resultat: En hotend der fungerer som ny.</p>
                     </div>
                 </article>
             </div>
