@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patrick Mosskov Nielsen | Projektleder | Business Analyst | AI Strategist</title>
     
-    <meta name="description" content="Profil og portefølje for Patrick Mosskov Nielsen. Projektleder med fokus på teknologidrevet ledelse og AI-orkestrering.">
+    <meta name="description" content="Profil og portefølje for Patrick Mosskov Nielsen. Projektleder og Business Analyst med fokus på teknologidrevet ledelse og AI-orkestrering.">
     <meta property="og:title" content="Patrick Mosskov Nielsen | Projektleder & AI Strategist">
     <meta property="og:description" content="Fra værkstedsgulvet til AI-agenter. Se mine projekter og min tilgang til ledelse.">
     <meta property="og:type" content="website">
@@ -35,7 +35,7 @@
         
         .card { background: var(--card-bg); border-radius: 8px; padding: 25px; margin-bottom: 40px; border-left: 5px solid var(--primary); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); contain: content; }
         .inner-box { background: var(--inner-box); padding: 15px; border-radius: 8px; margin-top: 15px; border: 1px solid var(--border-color); }
-        .text-italic { font-style: italic; font-size: 1.1rem; margin-bottom: 30px; }
+        .text-italic { font-style: italic; font-size: 1.1rem; margin-bottom: 30px; color: var(--text); }
         .skill-tag { background: var(--section-alt); color: var(--text); border: 1px solid var(--border-color); padding: 5px 10px; border-radius: 15px; font-size: 0.85rem; margin: 5px 5px 0 0; display: inline-block; }
 
         header { background: var(--header-bg); color: white; padding: 60px 15px 40px; text-align: center; position: relative; }
@@ -65,13 +65,13 @@
         h2 { color: var(--primary); border-left: 5px solid var(--accent); padding-left: 15px; margin-bottom: 25px; font-size: 1.8rem; }
         .timeline-item { background: var(--card-bg); padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid var(--accent); }
         .job-role { font-weight: 800; font-size: 1.1rem; color: var(--primary); }
+        .job-company { color: var(--accent); font-weight: 600; margin-bottom: 10px; display: block; }
 
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 20px; }
         .gallery-item { background: var(--card-bg); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.2s; will-change: transform; }
         .gallery-item:hover { transform: scale(1.02); }
         .gallery-img { width: 100%; height: 200px; object-fit: cover; background-color: #ddd; }
         .gallery-caption { padding: 15px; }
-        .gallery-title { font-weight: 700; color: var(--primary); display: block; margin-bottom: 5px; }
 
         .comp-container { position: relative; width: 100%; height: 250px; overflow: hidden; border-radius: 8px; cursor: ew-resize; }
         .comp-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
@@ -87,11 +87,10 @@
 
         #term-btn { position: fixed; bottom: 20px; right: 20px; background: #1e1e1e; color: #33ff00; border: 1px solid #33ff00; padding: 15px; border-radius: 50%; cursor: pointer; z-index: 1000; }
         .terminal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); backdrop-filter: blur(4px); z-index: 9999; display: none; justify-content: center; align-items: center; padding: 10px; }
-        .terminal-window { width: 750px; max-width: 100%; height: 500px; background: #0f0f0f; border-radius: 8px; display: flex; flex-direction: column; border: 1px solid #333; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
-        .terminal-header { background: #2d2d2d; padding: 10px 15px; display: flex; justify-content: space-between; color: #bbb; border-bottom: 1px solid #333; border-radius: 8px 8px 0 0; }
+        .terminal-window { width: 750px; max-width: 100%; height: 500px; background: #0f0f0f; border-radius: 8px; display: flex; flex-direction: column; border: 1px solid #333; }
+        .terminal-header { background: #2d2d2d; padding: 10px 15px; display: flex; justify-content: space-between; color: #bbb; border-bottom: 1px solid #333; }
         .terminal-body { padding: 20px; color: #e0e0e0; flex-grow: 1; overflow-y: auto; font-family: 'Courier New', monospace; scroll-behavior: smooth; }
         .input-line .prompt::after { content: '_'; animation: blink 1s step-start infinite; color: var(--term-info); margin-left: 2px; }
-        @keyframes blink { 50% { opacity: 0; } }
     </style>
 </head>
 <body>
@@ -101,7 +100,7 @@
             <i class="fa-solid fa-moon"></i> / <i class="fa-solid fa-sun"></i>
         </button>
         <h1>Patrick Mosskov Nielsen</h1>
-        <div class="title">Projektleder & Test Manager | Business Analyst</div>
+        <div class="title">Projektleder | Business Analyst | AI Strategist</div>
         <div style="display: flex; justify-content: center;">
             <p class="tagline typewriter" style="--chars: 35;">Menneskelig ledelse og AI i praksis</p>
         </div>
@@ -138,38 +137,54 @@
             </div>
             <div class="inner-box">
                 <strong style="color: var(--accent);"><i class="fa-solid fa-bolt"></i> Automatisering af bureaukrati</strong>
-                <p>Jeg accepterer ikke "plejer", hvis det er ineffektivt. Hos Motorstyrelsen byggede jeg scripts, der automatiserede komplekse beregninger og hjalp med automatisk dannelse af breve, så de var klar til afsendelse med korrekte beregninger og lovhenvisninger. Resultat: En proces, der normalt ville tage uger i manuel behandlingstid, blev eksekveret automatisk på en brøkdel af tiden.</p>
+                <p>Jeg accepterer ikke "plejer", hvis det er ineffektivt. Hos Motorstyrelsen byggede jeg scripts, der automatiserede komplekse beregninger og hjalp med automatisk dannelse af breve, så de var klar til afsendelse med korrekte beregninger og lovhenvisninger. 
+                <br><em>Resultat: En proces, der normalt ville tage uger i manuel behandlingstid, blev eksekveret automatisk på en brøkdel af tiden.</em></p>
             </div>
         </article>
         
         <article class="timeline-item">
-            <div class="job-role">Projektleder & Test Manager | Business Analyst</div>
-            <div class="job-company">Auto IT | 2024 - I dag</div>
+            <span class="job-role">Projektleder & Test Manager | Business Analyst</span>
+            <span class="job-company">Auto IT | 2024 - I dag</span>
             <div class="inner-box">
                 <p>I denne rolle bringer jeg hele min historik i spil. Jeg kender systemerne indefra og forstår forretningens behov.</p>
-                <ul>
-                    <li><strong>Transition & Udbud:</strong> Ansvarlig for at drive projektet sikkert fra udbud til stabil drift.</li>
-                    <li><strong>Business Analysis & Proxy PO:</strong> Analyserer forretningskrav og beskriver dem i detaljerede user stories.</li>
-                    <li><strong>Test Management:</strong> Sikrer kvaliteten i leverancen gennem struktureret test og validering.</li>
+                <ul style="margin-top: 10px; padding-left: 20px;">
+                    <li><strong>Transition & Udbud:</strong> Ansvarlig for at drive projektet sikkert fra udarbejdelse af udbud, til at vinde udbuddet og nu helt frem til stabil drift.</li>
+                    <li><strong>Business Analysis & Proxy PO:</strong> Analyserer forretningskrav og beskriver dem i detaljerede user stories, så udviklingsteamet kan eksekvere effektivt.</li>
+                    <li><strong>Test Management:</strong> Sikrer kvaliteten i leverancen gennem struktureret test og validering af løsningen.</li>
                 </ul>
             </div>
         </article>
 
         <article class="timeline-item">
-            <div class="job-role">Procesejer</div>
-            <div class="job-company">Motorstyrelsen | 2021 - 2024</div>
+            <span class="job-role">Procesejer</span>
+            <span class="job-company">Motorstyrelsen | 2021 - 2024</span>
             <div class="inner-box">
                 <p>Her rykkede jeg fra drift til udvikling. Jeg optimerede processerne og var bindeleddet, der sikrede, at komplekse regler blev omsat til korrekt systemadfærd.</p>
-                <ul>
+                <ul style="margin-top: 10px; padding-left: 20px;">
                     <li><strong>Automatisering:</strong> Designede logikken bag fuld- og semiautomatiske værktøjer, hvilket reducerede manuelle processer markant.</li>
-                    <li><strong>Problem Management:</strong> Stod for fejlfinding og udarbejdelse af den endelige løsning på komplekse datarettelser.</li>
+                    <li><strong>Data-projekter:</strong> Drev omfattende analyseprojekter for at identificere og beskrive komplekse datafejl. Udarbejdede de nødvendige workarounds og værktøjer til at håndtere sagerne, mens systemfejlen blev udbedret.</li>
+                    <li><strong>Leverandørstyring:</strong> Sparringspartner for eksterne leverandører. Gennemgik løsningsbeskrivelser kritisk og sikrede, at DMR blev udviklet efter kravene.</li>
+                    <li><strong>Problem Management:</strong> Stod for fejlfinding og udarbejdelse af den endelige løsning på komplekse datarettelser, klar til teknisk implementering.</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="timeline-item">
+            <span class="job-role">Værdifastsætter & Teknisk Specialist</span>
+            <span class="job-company">Motorstyrelsen | 2016 - 2021</span>
+            <div class="inner-box">
+                <ul style="padding-left: 20px;">
+                    <li><strong>Fagligt Ansvar:</strong> Eneansvarlig på landsplan for komplekse specialområder (herunder ID-tab) i en længere periode.</li>
+                    <li><strong>System-fundament:</strong> Ansvarlig for udvikling og vedligehold af de centrale beregningsskemaer, der dannede grundlag for logikken i de nuværende IT-systemer.</li>
+                    <li><strong>Driftsstyring:</strong> Varetog dele af driftsplanlægning og ressourcestyring på tværs af flere afdelinger for at sikre overholdelse af frister.</li>
+                    <li><strong>Kvalitet & Compliance:</strong> Udførte den lovpligtige kvalitetssikring og kontrol af kollegaers sagsbehandling for at garantere lovlighed til punkt og prikke.</li>
                 </ul>
             </div>
         </article>
 
         <article class="timeline-item" style="border-left-color: #64748b;"> 
-            <div class="job-role">Automekaniker (Det logiske fundament)</div>
-            <div class="job-company">Techcollege & Værksteder | 2007 - 2012</div>
+            <span class="job-role">Automekaniker (Logisk fundament)</span>
+            <span class="job-company">Techcollege & Værksteder | 2007 - 2012</span>
             <div class="inner-box">
                 <p><strong>Min tilgang til analyse stammer herfra.</strong> Uanset om det er en IT-proces eller en motor, bruger jeg Root Cause Analysis til at finde og fikse problemet permanent.</p>
             </div>
@@ -183,7 +198,7 @@
 
     <section id="personal" class="content-section">
         <h2>Bag Facaden</h2>
-        <p style="margin-bottom: 30px;">Når jeg tager arbejdshandskerne af, handler mit liv om nærvær og perspektiv.</p>
+        <p style="margin-bottom: 30px;">Når jeg tager arbejdshandskerne af, handler mit liv om nærvær og perspektiv. Jeg tror på, at man skal gøre tingene 100% uanset om det gælder forældreskab eller fritid.</p>
         <div class="gallery-grid">
             <article class="gallery-item">
                 <img src="images/mig_og_soen.jpg" loading="lazy" alt="Far og søn" class="gallery-img">
@@ -196,14 +211,14 @@
                 <img src="images/mc_tur.jpg" loading="lazy" alt="Motorcykeltur" class="gallery-img">
                 <div class="gallery-caption">
                     <span class="gallery-title">Perspektiv på to hjul</span>
-                    <p class="gallery-text">Det handler om at "reboote" hjernen. I det sekund jeg sætter mig på maskinen, tømmes hovedet. Jeg ser naturen og omgivelserne på en helt anden måde.</p>
+                    <p class="gallery-text">Det handler om at "reboote" hjernen. I det sekund jeg sætter mig på maskinen, tømmes hovedet. Jeg ser naturen, dyrene og omgivelserne på en helt anden måde end fra en bil.</p>
                 </div>
             </article>
             <article class="gallery-item">
                 <img src="images/mc_fix.jpg" loading="lazy" alt="Nedbrud" class="gallery-img">
                 <div class="gallery-caption">
                     <span class="gallery-title">Nedbrud? Ingen panik.</span>
-                    <p class="gallery-text">Billedet er fra en ferie, hvor teknikken svigtede. Hvor andre ser en ødelagt ferie, ser jeg en opgave. Jeg koblede hovedet over i fejlsøgnings-mode midt i ingenting.</p>
+                    <p class="gallery-text">Billedet er fra en ferie, hvor teknikken svigtede midt i ingenting. Hvor andre ser en ødelagt ferie, ser jeg en opgave. Jeg koblede hovedet over i fejlsøgnings-mode midt i ingenting.</p>
                 </div>
             </article>
             <article class="gallery-item">
@@ -231,33 +246,52 @@
         <div class="gallery-grid">
             <article class="gallery-item">
                 <img src="images/3d_print1.jpg" loading="lazy" alt="Tanke til produkt" class="gallery-img">
-                <div class="gallery-caption"><span class="gallery-title">Fra tanke til fysisk produkt</span><p class="gallery-text">Man får en idé, tegner den, og timer senere står man med produktet i hånden.</p></div>
+                <div class="gallery-caption">
+                    <span class="gallery-title">Fra tanke til fysisk produkt</span>
+                    <p class="gallery-text">Man får en idé, tegner den, og timer senere står man med produktet i hånden. Det tvinger mig til konstant at tænke ud af boksen.</p>
+                </div>
             </article>
             <article class="gallery-item">
-                <img src="images/3d_print2.jpg" loading="lazy" alt="Læringskurven" class="gallery-img">
-                <div class="gallery-caption"><span class="gallery-title">Læringskurven</span><p class="gallery-text">Jeg startede med firkanter. I dag designer jeg komplekse modeller. Jeg accepterer ikke, at noget "ikke kan lade sig gøre".</p></div>
+                <img src="images/3d_print2.jpg" loading="lazy" alt="Læringskurve" class="gallery-img">
+                <div class="gallery-caption">
+                    <span class="gallery-title">Læringskurven</span>
+                    <p class="gallery-text">Jeg startede med firkanter og "rough edges". I dag designer jeg komplekse modeller. Jeg accepterer ikke, at noget "ikke kan lade sig gøre".</p>
+                </div>
             </article>
             <article class="gallery-item">
                 <div class="comp-container">
-                    <input type="range" min="0" max="100" value="50" class="comp-slider" aria-label="Sammenligning Mercedes" oninput="Portfolio.handleSlider(this)">
+                    <input type="range" min="0" max="100" value="50" 
+                           aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="50% progression"
+                           class="comp-slider" aria-label="Sammenligning Mercedes reservedel" oninput="Portfolio.handleSlider(this)">
                     <div class="comp-icon"><i class="fa-solid fa-left-right"></i></div>
-                    <img src="images/Mercedes2.jpg" alt="Efter" class="comp-img comp-foreground" style="width:50%">
-                    <img src="images/Mercedes1.jpg" alt="Før" class="comp-img">
+                    <img src="images/Mercedes2.jpg" alt="Efter 3D print" class="comp-img comp-foreground" style="width:50%">
+                    <img src="images/Mercedes1.jpg" alt="Før reparation" class="comp-img">
                 </div>
-                <div class="gallery-caption"><span class="gallery-title">Reverse Engineering</span><p class="gallery-text">Fra den udgåede del til min 3D-printede reservedel. Problemet løst med skydelære og CAD.</p></div>
+                <div class="gallery-caption">
+                    <span class="gallery-title">Reverse Engineering</span>
+                    <p class="gallery-text">Fra den udgåede del til min 3D-printede reservedel. Problemet løst med skydelære og CAD.</p>
+                </div>
             </article>
             <article class="gallery-item">
                 <img src="images/filament_toys.png" loading="lazy" alt="Legetøj" class="gallery-img">
-                <div class="gallery-caption"><span class="gallery-title">Zero Waste & Motorik</span><p class="gallery-text">Vi udnytter filament-rester til at bygge figurer. Ressourceoptimering i børnehøjde.</p></div>
+                <div class="gallery-caption">
+                    <span class="gallery-title">Zero Waste & Motorik</span>
+                    <p class="gallery-text">Vi udnytter filament-rester til at bygge figurer. Det er ressourceoptimering i børnehøjde.</p>
+                </div>
             </article>
             <article class="gallery-item">
                 <div class="comp-container">
-                    <input type="range" min="0" max="100" value="50" class="comp-slider" aria-label="Sammenligning Hotend" oninput="Portfolio.handleSlider(this)">
+                    <input type="range" min="0" max="100" value="50" 
+                           aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="50% progression"
+                           class="comp-slider" aria-label="Sammenligning Hotend rensning" oninput="Portfolio.handleSlider(this)">
                     <div class="comp-icon"><i class="fa-solid fa-left-right"></i></div>
-                    <img src="images/hotend_after.jpg" alt="Efter" class="comp-img comp-foreground" style="width:50%">
-                    <img src="images/hotend_before.jpg" alt="Før" class="comp-img">
+                    <img src="images/hotend_after.jpg" alt="Renset hotend" class="comp-img comp-foreground" style="width:50%">
+                    <img src="images/hotend_before.jpg" alt="Før rensning" class="comp-img">
                 </div>
-                <div class="gallery-caption"><span class="gallery-title">Kreativ problemløsning</span><p class="gallery-text">Redningsaktion af en hotend begravet i smeltet plastik. Root Cause i praksis.</p></div>
+                <div class="gallery-caption">
+                    <span class="gallery-title">Kreativ problemløsning</span>
+                    <p class="gallery-text">Redningsaktion af en hotend begravet i smeltet plastik. Root Cause i praksis.</p>
+                </div>
             </article>
         </div>
     </section>
@@ -268,13 +302,13 @@
         <div class="terminal-window">
             <div class="terminal-header" id="terminal-title">
                 <span>patrick@portfolio:~</span>
-                <span style="cursor:pointer" onclick="Portfolio.toggleTerminal()">×</span>
+                <span style="cursor:pointer" onclick="Portfolio.toggleTerminal()" aria-label="Luk terminal">×</span>
             </div>
             <div class="terminal-body" id="term-body">
-                <div id="term-output">System v3.3 klar. Skriv 'help'.</div>
+                <div id="term-output">System v3.3 klar. Skriv 'help' for info.</div>
                 <form class="input-line" onsubmit="Portfolio.handleForm(event)">
-                    <span class="prompt">guest@portfolio:~$</span>
-                    <input type="text" id="term-input" autocomplete="off" spellcheck="false" style="background:transparent; border:none; color:white; flex:1; outline:none; font-family:monospace;">
+                    <span class="prompt" aria-hidden="true">guest@portfolio:~$</span>
+                    <input type="text" id="term-input" aria-label="Terminal input" autocomplete="off" spellcheck="false" style="background:transparent; border:none; color:white; flex:1; outline:none; font-family:monospace;">
                 </form>
             </div>
         </div>
@@ -292,7 +326,9 @@
                 this.els.modal = document.getElementById('terminal-modal');
                 this.els.sections = document.querySelectorAll('.content-section');
                 this.els.navCards = document.querySelectorAll('.nav-card');
+
                 if (localStorage.getItem('theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+
                 this.els.input.addEventListener('keydown', (e) => {
                     if (e.key === 'ArrowUp') this.browseHistory(1);
                     if (e.key === 'ArrowDown') this.browseHistory(-1);
@@ -318,6 +354,7 @@
                 el.parentElement.querySelector('.comp-foreground').style.width = val;
                 el.parentElement.querySelector('.comp-icon').style.left = val;
                 el.setAttribute('aria-valuenow', el.value);
+                el.setAttribute('aria-valuetext', `${el.value}% progression`);
             },
             toggleTerminal(force) {
                 const show = (force !== undefined ? force : this.els.modal.style.display !== 'flex');
@@ -335,7 +372,7 @@
                 if (cmd === 'cv') this.simulateLoading();
                 else if (cmd === 'help') this.printLine("Kommandoer: cv, skills, philosophy, exit, clear", "info");
                 else if (cmd === 'exit') this.toggleTerminal(false);
-                else if (cmd === 'clear') this.els.output.innerHTML = "";
+                else if (cmd === 'clear') { this.els.output.innerHTML = ""; }
                 else this.printLine(`Fejl: '${cmd}' ikke fundet. Prøv 'help'.`, "error");
                 this.els.input.value = "";
                 this.els.body.scrollTo({ top: this.els.body.scrollHeight, behavior: 'smooth' });
@@ -365,8 +402,8 @@
                 const div = document.createElement('div');
                 div.textContent = text;
                 if (type === "error") div.style.color = "var(--term-error)";
-                if (type === "success") div.style.color = "var(--term-success)";
-                if (type === "info") div.style.color = "var(--term-info)";
+                else if (type === "success") div.style.color = "var(--term-success)";
+                else if (type === "info") div.style.color = "var(--term-info)";
                 this.els.output.appendChild(div);
                 if (this.els.output.children.length > 50) this.els.output.removeChild(this.els.output.firstChild);
             }
