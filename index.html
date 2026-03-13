@@ -345,10 +345,10 @@
         </button>
 
         <h1>Patrick Mosskov Nielsen</h1>
-        <div class="title">Projektleder & Test Manager | Business Analyst</div>
+        <div class="title">Projektleder & Test Manager | AI Strategist</div>
         
         <div style="display: flex; justify-content: center;">
-            <p class="tagline typewriter">Fra værkstedsgulvet til maskinrummet.</p>
+            <p class="tagline typewriter">Fra værkstedsgulvet til AI-agenter.</p>
         </div>
         
         <p class="tagline" style="margin-top: 5px; font-size: 1rem; opacity: 0.8;">
@@ -385,7 +385,7 @@
         <div style="height: 4px; background: var(--accent); width: 50px; margin-bottom: 30px;"></div>
 
         <p style="margin-bottom: 30px; font-size: 1.1rem; font-style: italic; color: var(--text);">
-            "Jeg er projektlederen, der sikrer, at vi kommer i mål til tiden og med den rette kvalitet. Men min profil rummer mere end tidsplaner og milepæle. Jeg er samtidig praktikeren, der har arbejdet mig op fra gulvet. Det betyder, at jeg ikke bare styrer projektet fra helikopteren; jeg forstår teknikken og de komplekse forretningsregler i maskinrummet. Jeg leder processen, men jeg har også evnerne til at oversætte og løse problemerne, når de opstår."
+            "Jeg er projektlederen, der sikrer, at vi kommer i mål til tiden og med den rette kvalitet. Men min profil rummer mere end tidsplaner og milepæle. Jeg er samtidig praktikeren, der har arbejdet mig op fra gulvet. Min filosofi er enkel: <strong>AI skal fjerne de opgaver, folk hader at lave, så de kan fokusere på det, der skaber værdi.</strong> Jeg leder processen, men jeg har også evnerne til at oversætte og løse problemerne, når de opstår."
         </p>
 
         <div style="background: var(--card-bg); border-radius: 8px; padding: 25px; margin-bottom: 40px; border-left: 5px solid var(--primary); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
@@ -408,20 +408,21 @@
         </div>
 
         <div class="timeline-item">
-            <div class="job-role">Projektleder & Test Manager | Business Analyst</div>
+            <div class="job-role">Projektleder & Test Manager | AI Specialist</div>
             <div class="job-company">Auto IT | 2024 - I dag</div>
             
-            <p>I denne rolle bringer jeg hele min historik i spil. Jeg kender systemerne indefra (fra min tid i Motorstyrelsen) og forstår forretningens behov.</p>
+            <p>I denne rolle bringer jeg hele min historik i spil. Jeg kombinerer klassisk projektledelse med moderne teknologi for at fremtidssikre forretningen.</p>
             
             <ul style="margin-top: 15px; padding-left: 20px; font-size: 0.95rem; color: var(--text);">
                 <li style="margin-bottom: 8px;"><strong>Transition & Udbud:</strong> Ansvarlig for at drive projektet sikkert fra udarbejdelse af udbud, til at vinde udbuddet og nu helt frem til stabil drift.</li>
-                <li style="margin-bottom: 8px;"><strong>Business Analysis & Proxy PO:</strong> Analyserer forretningskrav og beskriver dem i detaljerede user stories, så udviklingsteamet kan eksekvere effektivt.</li>
+                <li style="margin-bottom: 8px;"><strong>AI & Automatisering:</strong> Implementering af specialiserede AI-agenter baseret på anonymiseret forretningsdata for at optimere interne workflows.</li>
                 <li style="margin-bottom: 8px;"><strong>Test Management:</strong> Sikrer kvaliteten i leverancen gennem struktureret test og validering af løsningen.</li>
             </ul>
             
             <div style="margin-top: 15px;">
                 <span class="skill-tag">Projektledelse</span>
-                <span class="skill-tag">Kravspecificering</span>
+                <span class="skill-tag">AI Strategi</span>
+                <span class="skill-tag">Data-anonymisering</span>
                 <span class="skill-tag">Transition</span>
             </div>
         </div>
@@ -699,7 +700,7 @@
     </section>
 
     <div class="contact-bar">
-        <p>Vil du høre mere om mine projekter eller min profil?</p>
+        <p>Vil du høre mere om mine AI-projekter eller min profil?</p>
         <a href="mailto:supernielsen@mensa.dk" class="contact-btn">
             <i class="fa-regular fa-envelope"></i> Kontakt Patrick
         </a>
@@ -719,7 +720,7 @@
         </div>
         
         <div class="terminal-body" id="term-body" onclick="document.getElementById('term-input').focus()">
-            <div class="term-line">Velkommen til Patricks Terminal v1.0.</div>
+            <div class="term-line">Velkommen til Patricks Terminal v1.1.</div>
             <div class="term-line">Skriv <span class="cmd-highlight">'help'</span> for at se en liste over kommandoer.</div>
             <br>
             
@@ -774,7 +775,7 @@
 %cHej Nysgerrige! 😎
 
 Fedt at du kigger med i maskinrummet.
-Leder du efter en, der tør gå i dybden?
+Leder du efter en AI-interesseret projektleder?
 
 Så lad os tage en kop kaffe.
 Mvh Patrick
@@ -873,6 +874,7 @@ function processCommand(cmd) {
             <table style="width: 100%; color: #fff;">
                 <tr><td style="width:100px; color:#33ff00">cv</td><td>Downloader mit CV som PDF</td></tr>
                 <tr><td style="color:#33ff00">skills</td><td>Viser teknisk stak & kompetencer</td></tr>
+                <tr><td style="color:#33ff00">ai</td><td>Min tilgang til AI agenter</td></tr>
                 <tr><td style="color:#33ff00">contact</td><td>Viser kontaktinfo</td></tr>
                 <tr><td style="color:#33ff00">coffee</td><td>Er jeg klar til kaffe?</td></tr>
                 <tr><td style="color:#33ff00">clear</td><td>Rydder terminalen</td></tr>
@@ -886,12 +888,22 @@ function processCommand(cmd) {
             setTimeout(() => window.open('Patrick_Nielsen_CV.pdf', '_blank'), 1000);
             break;
 
+        case 'ai':
+            response = `
+            [AI STRATEGY MODULE]
+            --------------------
+            Filosofi: AI skal automatisere det repetitive (det vi hader).
+            Værktøjer: Custom Agents, Python scripts, Local LLMs.
+            Fokus: Sikker datahåndtering og praktisk værdi.
+            --------------------`;
+            break;
+
         case 'skills':
             response = `
             [LOADING MODULES]...
             --------------------
             > Project Management ... [EXPERT]
-            > Test Management ...... [EXPERT]
+            > AI Agent Deployment .. [STRATEGIC]
             > Root Cause Analysis .. [EXPERT]
             > Python Scripting ..... [INTERMEDIATE]
             > 3D CAD & Print ....... [MAKER LEVEL]
@@ -939,10 +951,3 @@ function printOutput(html) {
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
