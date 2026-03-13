@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patrick Mosskov Nielsen | Projektleder | Business Analyst | AI Strategist</title>
+    
+    <meta name="description" content="Profil og portefølje for Patrick Mosskov Nielsen. Projektleder og Business Analyst med fokus på teknologidrevet ledelse og AI-orkestrering.">
+    <meta property="og:title" content="Patrick Mosskov Nielsen | Projektleder & AI Strategist">
+    <meta property="og:description" content="Fra værkstedsgulvet til AI-agenter. Se mine projekter og min tilgang til ledelse.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Patrick Mosskov Nielsen | Projektleder | AI Strategist">
+    <meta name="twitter:description" content="Menneskelig ledelse og AI i praksis.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -37,7 +46,7 @@
         .typewriter { 
             display: inline-block; overflow: hidden; border-right: .15em solid var(--accent); white-space: nowrap; 
             margin: 0 auto; letter-spacing: .05em; width: 0; max-width: fit-content;
-            animation: typing 3.5s steps(35, end) forwards, blink-caret .75s step-end infinite;
+            animation: typing 3.5s steps(var(--chars, 35), end) forwards, blink-caret .75s step-end infinite;
         }
         @keyframes typing { from { width: 0 } to { width: 100% } }
         @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--accent) } }
@@ -66,6 +75,7 @@
         .gallery-img { width: 100%; height: 200px; object-fit: cover; background-color: #ddd; }
         .gallery-caption { padding: 15px; }
         .gallery-title { font-weight: 700; color: var(--primary); display: block; margin-bottom: 5px; }
+        .gallery-text { font-size: 0.9rem; color: var(--text); margin-top: 5px; }
 
         .comp-container { position: relative; width: 100%; height: 250px; overflow: hidden; border-radius: 8px; cursor: ew-resize; }
         .comp-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
@@ -74,15 +84,18 @@
         .comp-slider { position: absolute; width: 100%; height: 100%; opacity: 0; z-index: 3; cursor: ew-resize; margin: 0; top: 0; left: 0; }
 
         .vision-container { background: #0f172a; color: #f8fafc; padding: 40px 30px; border-radius: 12px; margin: 40px 0; position: relative; overflow: hidden; border: 1px solid rgba(59, 130, 246, 0.3); }
+        [data-theme="dark"] .vision-container { background: #020617; }
 
         .contact-btn { display: inline-block; padding: 10px 25px; background: var(--primary); color: white; border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.3s; }
         [data-theme="dark"] .contact-btn { background: var(--accent); color: var(--btn-text); }
 
-        #term-btn { position: fixed; bottom: 20px; right: 20px; background: #1e1e1e; color: #33ff00; border: 1px solid #33ff00; padding: 15px; border-radius: 50%; cursor: pointer; z-index: 1000; }
+        #term-btn { position: fixed; bottom: 20px; right: 20px; background: #1e1e1e; color: #33ff00; border: 1px solid #33ff00; padding: 15px; border-radius: 50%; cursor: pointer; z-index: 1000; box-shadow: 0 0 10px rgba(51,255,0,0.2); }
         .terminal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); backdrop-filter: blur(4px); z-index: 9999; display: none; justify-content: center; align-items: center; padding: 10px; }
         .terminal-window { width: 750px; max-width: 100%; height: 500px; background: #0f0f0f; border-radius: 8px; display: flex; flex-direction: column; border: 1px solid #333; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
-        .terminal-header { background: #2d2d2d; padding: 10px 15px; display: flex; justify-content: space-between; color: #bbb; border-bottom: 1px solid #333; }
+        .terminal-header { background: #2d2d2d; padding: 10px 15px; display: flex; justify-content: space-between; color: #bbb; border-bottom: 1px solid #333; border-radius: 8px 8px 0 0; }
         .terminal-body { padding: 20px; color: #e0e0e0; flex-grow: 1; overflow-y: auto; font-family: 'Courier New', monospace; scroll-behavior: smooth; }
+        .input-line .prompt::after { content: '_'; animation: blink 1s step-start infinite; color: var(--term-info); margin-left: 2px; }
+        @keyframes blink { 50% { opacity: 0; } }
     </style>
 </head>
 <body>
@@ -137,10 +150,10 @@
             <span class="job-role">Projektleder & Test Manager | Business Analyst</span>
             <span class="job-company">Auto IT | 2024 - I dag</span>
             <div class="inner-box">
-                <p>I denne rolle bringer jeg hele min historik i spil. Jeg kender systemerne indefra og forstår forretningens behov.</p>
+                <p>I denne rolle bringer jeg hele min historik i spil. Jeg kender systemerne indefra (fra min tid i Motorstyrelsen) og forstår forretningens behov.</p>
                 <ul style="margin-top: 10px; padding-left: 20px;">
                     <li><strong>Transition & Udbud:</strong> Ansvarlig for at drive projektet sikkert fra udarbejdelse af udbud, til at vinde udbuddet og nu helt frem til stabil drift.</li>
-                    <li><strong>Business Analysis & Proxy PO:</strong> Analyserer forretningskrav og beskriver dem i detaljerede user stories.</li>
+                    <li><strong>Business Analysis & Proxy PO:</strong> Analyserer forretningskrav og beskriver dem i detaljerede user stories, så udviklingsteamet kan eksekvere effektivt.</li>
                     <li><strong>Test Management:</strong> Sikrer kvaliteten i leverancen gennem struktureret test og validering af løsningen.</li>
                 </ul>
             </div>
@@ -150,10 +163,12 @@
             <span class="job-role">Procesejer</span>
             <span class="job-company">Motorstyrelsen | 2021 - 2024</span>
             <div class="inner-box">
-                <ul style="padding-left: 20px;">
+                <p>Her rykkede jeg fra drift til udvikling. Jeg optimerede processerne og var bindeleddet, der sikrede, at komplekse regler blev omsat til korrekt systemadfærd.</p>
+                <ul style="margin-top: 10px; padding-left: 20px;">
                     <li><strong>Automatisering:</strong> Designede logikken bag fuld- og semiautomatiske værktøjer, hvilket reducerede manuelle processer markant.</li>
-                    <li><strong>Data-projekter:</strong> Drev omfattende analyseprojekter for at identificere og beskrive komplekse datafejl. Udarbejdede workarounds og værktøjer mens systemfejl blev udbedret.</li>
+                    <li><strong>Data-projekter:</strong> Drev omfattende analyseprojekter for at identificere og beskrive komplekse datafejl. Udarbejdede de nødvendige workarounds og værktøjer til at håndtere sagerne, mens systemfejlen blev udbedret.</li>
                     <li><strong>Leverandørstyring:</strong> Sparringspartner for eksterne leverandører. Gennemgik løsningsbeskrivelser kritisk og sikrede, at DMR blev udviklet efter kravene.</li>
+                    <li><strong>Problem Management:</strong> Stod for fejlfinding og udarbejdelse af den endelige løsning på komplekse datarettelser.</li>
                 </ul>
             </div>
         </article>
@@ -164,23 +179,25 @@
             <div class="inner-box">
                 <ul style="padding-left: 20px;">
                     <li><strong>Fagligt Ansvar:</strong> Eneansvarlig på landsplan for komplekse specialområder (herunder ID-tab) i en længere periode.</li>
-                    <li><strong>System-fundament:</strong> Ansvarlig for udvikling og vedligehold af centrale beregningsskemaer, der dannede grundlag for logikken i DMR.</li>
+                    <li><strong>System-fundament:</strong> Ansvarlig for udvikling og vedligehold af de centrale beregningsskemaer, der dannede grundlag for logikken i de nuværende IT-systemer.</li>
+                    <li><strong>Driftsstyring:</strong> Varetog dele af driftsplanlægning og ressourcestyring på tværs af flere afdelinger for at sikre overholdelse af frister.</li>
                     <li><strong>Procesdokumentation:</strong> Udarbejdede detaljerede procesbeskrivelser (A-Z) for hele værdifastsættelsesområdet.</li>
+                    <li><strong>Kvalitet & Compliance:</strong> Udførte den lovpligtige kvalitetssikring og kontrol af kollegaers sagsbehandling for at garantere lovlighed til punkt og prikke.</li>
                 </ul>
             </div>
         </article>
 
         <article class="timeline-item" style="border-left-color: #64748b;"> 
-            <span class="job-role">Automekaniker (Det logiske fundament)</span>
+            <span class="job-role">Automekaniker (Logisk fundament)</span>
             <span class="job-company">Techcollege & Værksteder | 2007 - 2012</span>
             <div class="inner-box">
-                <p>Her blev min tilgang til Root Cause Analysis grundlagt. Uanset om det er en IT-proces eller en motor, bruger jeg samme logik: find rodårsagen og fikse problemet permanent.</p>
+                <p><strong>Min tilgang til analyse stammer herfra.</strong> Uanset om jeg analyserer en kompleks systemfejl i en IT-proces eller fejlsøger på en motor, bruger jeg samme logik: find rodårsagen (Root Cause Analysis) og beskriv løsningen præcist, så problemet kan blive fikset permanent.</p>
             </div>
         </article>
 
         <div class="vision-container">
             <h3 style="color: var(--accent); margin-bottom: 10px;">Min vision som leder</h3>
-            <p style="font-style: italic;">"Succesfuld ledelse handler om at frigøre potentialet i hver enkelt medarbejder. Jeg bruger min tekniske indsigt og dataunderstøttede værktøjer til at skabe rammerne for høj kvalitet og gennemsigtighed."</p>
+            <p style="font-style: italic;">"Succesfuld ledelse handler om at frigøre potentialet i hver enkelt medarbejder. Jeg bruger min tekniske indsigt og dataunderstøttede værktøjer til at skabe rammerne for høj kvalitet, gennemsigtighed og klare prioriteringer, så teamet kan levere konkrete resultater."</p>
         </div>
     </section>
 
@@ -191,36 +208,36 @@
             <article class="gallery-item">
                 <img src="images/mig_og_soen.jpg" loading="lazy" alt="Far og søn" class="gallery-img">
                 <div class="gallery-caption">
-                    <span class="gallery-title">50/50 = 100% Fokus</span>
-                    <p class="gallery-text">50/50 ordningen betyder, at jeg er 100% på, når vi er sammen. Vi fordyber os i alt fra perleplader til teknik. Jeg er hans far, hans guide og hans makker.</p>
+                    <span class="gallery-title"><i class="fa-solid fa-child-reaching"></i> 50/50 = 100% Fokus</span>
+                    <p class="gallery-text">50/50 ordningen betyder, at jeg er 100% på, når vi er sammen. Min vigtigste opgave er at være en stærk far og et ordentligt forbillede. Vi fordyber os i alt fra perleplader til teknik, for jeg tror på, at man skaber tryghed gennem både faste rammer og fælles oplevelser. Jeg er hans far, hans guide og hans makker.</p>
                 </div>
             </article>
             <article class="gallery-item">
                 <img src="images/mc_tur.jpg" loading="lazy" alt="Motorcykeltur" class="gallery-img">
                 <div class="gallery-caption">
-                    <span class="gallery-title">Perspektiv på to hjul</span>
-                    <p class="gallery-text">Det handler om at "reboote" hjernen. I det sekund jeg sætter mig på maskinen, tømmes hovedet. Jeg finder roen på trods af at jeg altid har telefonen i øret og er tilgængelig.</p>
+                    <span class="gallery-title"><i class="fa-solid fa-motorcycle"></i> Perspektiv på to hjul</span>
+                    <p class="gallery-text">Det handler ikke om fart, men om at "reboote" hjernen. I det sekund jeg sætter mig på maskinen, tømmes hovedet. Jeg ser naturen, dyrene og omgivelserne på en helt anden måde end fra en bil. Det er her, jeg finder roen på trods af at jeg altid har telefonen i øret og er tilgængelig.</p>
                 </div>
             </article>
             <article class="gallery-item">
                 <img src="images/mc_fix.jpg" loading="lazy" alt="Nedbrud" class="gallery-img">
                 <div class="gallery-caption">
-                    <span class="gallery-title">Nedbrud? Ingen panik.</span>
-                    <p class="gallery-text">Billedet er fra en ferie, hvor teknikken svigtede midt i ingenting. Hvor andre ser en ødelagt ferie, ser jeg en opgave. Jeg koblede hovedet over i fejlsøgnings-mode.</p>
+                    <span class="gallery-title"><i class="fa-solid fa-screwdriver-wrench"></i> Nedbrud? Ingen panik.</span>
+                    <p class="gallery-text">Billedet er fra en ferie, hvor teknikken svigtede midt i ingenting. Hvor andre ser en ødelagt ferie, ser jeg en opgave. Jeg koblede hovedet fra ferie-mode og over i fejlsøgnings-mode.</p>
                 </div>
             </article>
             <article class="gallery-item">
                 <img src="images/mc_plan.jpg" loading="lazy" alt="Python Plan" class="gallery-img">
                 <div class="gallery-caption">
-                    <span class="gallery-title">Projektledelse på to hjul</span>
-                    <p class="gallery-text">Selv frihed kræver planlægning. Jeg brugte et Python-script til at splitte min rute op i logiske segmenter og optimere køretiden.</p>
+                    <span class="gallery-title"><i class="fa-brands fa-python"></i> Projektledelse på to hjul</span>
+                    <p class="gallery-text">Selv frihed kræver planlægning. Jeg brugte et Python-script til at splitte hele min rute op i logiske segmenter og optimere køretiden. Det er den perfekte kombination af min indre projektleder, nørden der elsker data, og eventyreren der vil ud og opleve verden.</p>
                 </div>
             </article>
             <article class="gallery-item">
                 <img src="images/vaerksted.jpg" loading="lazy" alt="Værkstedet" class="gallery-img">
                 <div class="gallery-caption">
-                    <span class="gallery-title">Håndværket</span>
-                    <p class="gallery-text">At kunne fikse ting fysisk holder min problemløsning skarp. Der er en tilfredsstillelse i at se et konkret resultat, som man ikke altid får bag en skærm.</p>
+                    <span class="gallery-title"><i class="fa-solid fa-wrench"></i> Håndværket</span>
+                    <p class="gallery-text">Selvom jeg arbejder med IT, slipper jeg aldrig håndværket. At kunne fikse ting fysisk holder min problemløsning skarp. Der er en tilfredsstillelse i at se et konkret resultat, som man ikke altid får bag en skærm.</p>
                 </div>
             </article>
         </div>
@@ -230,16 +247,22 @@
         <h2>Maker Space</h2>
         <div class="card">
             <p><strong>"Det har jeg aldrig prøvet før, så det klarer jeg helt sikkert!"</strong></p>
-            <p style="margin-top: 10px;">Jeg er selvlært i CAD og 3D-print, fordi jeg er nysgerrig. Jeg startede for over 10 år siden med at bygge min egen printer – længe før det blev mainstream.</p>
+            <p style="margin-top: 10px;">Det er min tilgang til læring. Jeg er selvlært i CAD og 3D-print, fordi jeg er nysgerrig. Jeg startede for over 10 år siden med at bygge min egen printer sammen med en kammerat – længe før det blev mainstream.</p>
         </div>
         <div class="gallery-grid">
             <article class="gallery-item">
                 <img src="images/3d_print1.jpg" loading="lazy" alt="Prototype" class="gallery-img">
-                <div class="gallery-caption"><span class="gallery-title">Fra tanke til fysisk produkt</span><p class="gallery-text">Man får en idé til en "tosset" løsning, tegner den, og timer senere står man med produktet i hånden.</p></div>
+                <div class="gallery-caption">
+                    <span class="gallery-title">Fra tanke til fysisk produkt</span>
+                    <p class="gallery-text">Det fascinerende er processen. Man får en idé til en "tosset" løsning, tegner den, og timer senere står man med produktet i hånden. Det tvinger mig til konstant at tænke ud af boksen.</p>
+                </div>
             </article>
             <article class="gallery-item">
-                <img src="images/3d_print2.jpg" loading="lazy" alt="Læringskurve" class="gallery-img">
-                <div class="gallery-caption"><span class="gallery-title">Læringskurven</span><p class="gallery-text">Jeg startede med firkanter. I dag designer jeg komplekse modeller. Jeg accepterer ikke, at noget "ikke kan lade sig gøre".</p></div>
+                <img src="images/3d_print2.jpg" loading="lazy" alt="CAD" class="gallery-img">
+                <div class="gallery-caption">
+                    <span class="gallery-title">Læringskurven</span>
+                    <p class="gallery-text">Jeg startede med firkanter og "rough edges". I dag designer jeg komplekse modeller. Hvis jeg støder på en begrænsning, finder jeg svaret på YouTube. Jeg accepterer ikke, at noget "ikke kan lade sig gøre".</p>
+                </div>
             </article>
             <article class="gallery-item">
                 <div class="comp-container">
@@ -248,11 +271,17 @@
                     <img src="images/Mercedes2.jpg" alt="Efter" class="comp-img comp-foreground" style="width:50%">
                     <img src="images/Mercedes1.jpg" alt="Før" class="comp-img">
                 </div>
-                <div class="gallery-caption"><span class="gallery-title">Reverse Engineering</span><p class="gallery-text">Fra den udgåede del til min 3D-printede reservedel. Problemet løst med skydelære og CAD.</p></div>
+                <div class="gallery-caption">
+                    <span class="gallery-title">Reverse Engineering (Træk i billedet)</span>
+                    <p class="gallery-text">Her mødes mekanikeren og nørden. Træk i slideren for at se forvandlingen fra den udgåede, defekte del til min ny-designede og 3D-printede reservedel. Problemet løst med en skydelære og CAD.</p>
+                </div>
             </article>
             <article class="gallery-item">
                 <img src="images/filament_toys.png" loading="lazy" alt="Legetøj" class="gallery-img">
-                <div class="gallery-caption"><span class="gallery-title">Zero Waste & Motorik</span><p class="gallery-text">Vi udnytter filament-rester til at bygge figurer. Ressourceoptimering i børnehøjde.</p></div>
+                <div class="gallery-caption">
+                    <span class="gallery-title"><i class="fa-solid fa-recycle"></i> Zero Waste & Motorik</span>
+                    <p class="gallery-text">Jeg smider aldrig de sidste meter filament ud. I stedet printer jeg små samleled, som min søn og jeg bruger til at bygge komplekse figurer. Det er ressourceoptimering i børnehøjde: Vi udnytter materialet til sidste dråbe, og samtidig træner vi hans finmotorik og mønsterforståelse gennem leg.</p>
+                </div>
             </article>
             <article class="gallery-item">
                 <div class="comp-container">
@@ -261,7 +290,10 @@
                     <img src="images/hotend_after.jpg" alt="Efter" class="comp-img comp-foreground" style="width:50%">
                     <img src="images/hotend_before.jpg" alt="Før" class="comp-img">
                 </div>
-                <div class="gallery-caption"><span class="gallery-title">Kreativ problemløsning</span><p class="gallery-text">Hotend begravet i plastik. Med varme og lidt forsigtig ild fik jeg den gjort som ny.</p></div>
+                <div class="gallery-caption">
+                    <span class="gallery-title">Kreativ (og lidt farlig) problemløsning</span>
+                    <p class="gallery-text">Træk i slideren for at se redningsaktionen. En hotend begravet i en klump af smeltet plastik. Med rensebenzin, varme og lidt forsigtig ild fik jeg smeltet plastikken væk. Resultat: En hotend der fungerer som ny.</p>
+                </div>
             </article>
         </div>
     </section>
@@ -275,7 +307,7 @@
                 <span style="cursor:pointer" onclick="Portfolio.toggleTerminal()">×</span>
             </div>
             <div class="terminal-body" id="term-body">
-                <div id="term-output">Velkommen. Skriv 'help' for info.</div>
+                <div id="term-output">Velkommen til systemet. Skriv 'help' for kommandoer.</div>
                 <form class="input-line" onsubmit="Portfolio.handleForm(event)">
                     <span class="prompt">guest@portfolio:~$</span>
                     <input type="text" id="term-input" autocomplete="off" spellcheck="false" style="background:transparent; border:none; color:white; flex:1; outline:none; font-family:monospace;">
@@ -288,6 +320,7 @@
         const Portfolio = {
             els: {},
             history: [],
+            historyIdx: -1,
             init() {
                 this.els.input = document.getElementById('term-input');
                 this.els.output = document.getElementById('term-output');
@@ -297,6 +330,11 @@
                 this.els.navCards = document.querySelectorAll('.nav-card');
 
                 if (localStorage.getItem('theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+
+                this.els.input.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowUp') this.browseHistory(1);
+                    if (e.key === 'ArrowDown') this.browseHistory(-1);
+                });
                 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') this.toggleTerminal(false); });
             },
             toggleTheme() {
@@ -308,7 +346,11 @@
             },
             showSection(id, btn) {
                 this.els.sections.forEach(s => s.classList.toggle('active', s.id === id));
-                this.els.navCards.forEach(c => c.classList.toggle('active', c === btn));
+                this.els.navCards.forEach(c => {
+                    const active = c === btn;
+                    c.classList.toggle('active', active);
+                    c.setAttribute('aria-selected', active);
+                });
             },
             handleSlider(el) {
                 const val = el.value + "%";
@@ -325,28 +367,75 @@
                 e.preventDefault();
                 const cmd = this.els.input.value.trim().toLowerCase();
                 if(!cmd) return;
-                this.printLine(`guest@portfolio:~$ ${cmd}`);
+                
+                this.history.unshift(cmd);
+                this.historyIdx = -1;
+                
+                this.printLine(`guest@portfolio:~$ ${cmd}`, "normal");
 
                 if (cmd === 'cv') {
-                    this.printLine("Initierer sikker download...", "info");
-                    setTimeout(() => window.open('Patrick_Nielsen_CV.pdf', '_blank'), 1000);
+                    this.simulateLoading();
                 } else if (cmd === 'help') {
-                    this.printLine("Kommandoer: cv, skills, philosophy, exit, clear", "info");
+                    this.printHTML(`
+                    <div style="color: #bbb; margin-bottom: 10px;">Tilgængelige kommandoer:</div>
+                    <table style="width: 100%; color: #fff;">
+                        <tr><td style="width:120px; color:var(--term-info)">cv</td><td>Downloader mit CV som PDF</td></tr>
+                        <tr><td style="color:var(--term-info)">skills</td><td>Viser teknisk stak & kompetencer</td></tr>
+                        <tr><td style="color:var(--term-info)">philosophy</td><td>Min tilgang til ledelse og AI</td></tr>
+                        <tr><td style="color:var(--term-info)">coffee</td><td>Er jeg klar til kaffe?</td></tr>
+                        <tr><td style="color:var(--term-info)">clear</td><td>Rydder terminalen</td></tr>
+                        <tr><td style="color:var(--term-info)">exit</td><td>Lukker terminalen</td></tr>
+                    </table>`);
                 } else if (cmd === 'skills') {
-                    this.printLine("> Project Management ... [EXPERT]", "success");
-                    this.printLine("> AI Orchestration ..... [EXPERT]", "success");
-                    this.printLine("> Root Cause Analysis .. [EXPERT]", "success");
+                    this.printHTML(`
+                    [LOADING MODULES]...
+                    --------------------
+                    > Project Management ... <span style="color: var(--term-success)">[EXPERT]</span>
+                    > AI Orchestration ..... <span style="color: var(--term-success)">[EXPERT]</span>
+                    > Root Cause Analysis .. <span style="color: var(--term-success)">[EXPERT]</span>
+                    > Python Scripting ..... <span style="color: #ffbd2e">[INTERMEDIATE]</span>
+                    > 3D CAD & Print ....... <span style="color: var(--term-success)">[MAKER LEVEL]</span>
+                    > Coffee Consumption ... <span style="color: var(--term-error)">[CRITICAL HIGH]</span>
+                    --------------------
+                    Status: Ready for deployment.
+                    `);
                 } else if (cmd === 'philosophy') {
-                    this.printLine("Teknologi skal fjerne opgaver folk hader.", "info");
+                    this.printLine(`"Teknologi, og herunder AI, skal fjerne de opgaver, folk hader at lave, så de kan fokusere dér, hvor de skaber målbare resultater."`, "info");
+                } else if (cmd === 'coffee') {
+                    this.printHTML(`System check: Kaffetank niveau lavt.<br>Resultat: <strong>Ja, lad os tage et kaffemøde!</strong> ☕`, "success");
                 } else if (cmd === 'exit') {
                     this.toggleTerminal(false);
                 } else if (cmd === 'clear') {
                     this.els.output.innerHTML = "";
+                } else if (cmd === 'sudo' || cmd === 'sudo hire patrick') {
+                    this.printLine(`Permission denied.`, "error");
                 } else {
-                    this.printLine(`Fejl: '${cmd}' ikke fundet.`, "error");
+                    this.printLine(`Fejl: '${cmd}' ikke fundet. Skriv 'help'.`, "error");
                 }
+                
                 this.els.input.value = "";
                 this.els.body.scrollTo({ top: this.els.body.scrollHeight, behavior: 'smooth' });
+            },
+            simulateLoading() {
+                this.printLine("Initierer sikker download...", "info");
+                const lastLine = this.els.output.lastChild;
+                let dots = 0;
+                const interval = setInterval(() => {
+                    dots = (dots + 1) % 4;
+                    lastLine.textContent = `Initierer sikker download${'.'.repeat(dots)}`;
+                }, 300);
+                setTimeout(() => {
+                    clearInterval(interval);
+                    this.printLine("Download klar! Åbner PDF...", "success");
+                    window.open('Patrick_Nielsen_CV.pdf', '_blank');
+                }, 1500);
+            },
+            browseHistory(dir) {
+                if (this.history.length === 0) return;
+                this.historyIdx += dir;
+                if (this.historyIdx < 0) { this.historyIdx = -1; this.els.input.value = ""; return; }
+                if (this.historyIdx >= this.history.length) this.historyIdx = this.history.length - 1;
+                this.els.input.value = this.history[this.historyIdx];
             },
             printLine(text, type = "normal") {
                 const div = document.createElement('div');
@@ -354,6 +443,13 @@
                 if (type === "error") div.style.color = "var(--term-error)";
                 else if (type === "success") div.style.color = "var(--term-success)";
                 else if (type === "info") div.style.color = "var(--term-info)";
+                div.style.marginBottom = "8px";
+                this.els.output.appendChild(div);
+            },
+            printHTML(htmlStr) {
+                const div = document.createElement('div');
+                div.innerHTML = htmlStr;
+                div.style.marginBottom = "8px";
                 this.els.output.appendChild(div);
             }
         };
