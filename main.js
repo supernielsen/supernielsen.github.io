@@ -75,7 +75,6 @@
         'help': () => printHTML(`
             <div style="color: #bbb; margin-bottom: 10px;">Tilgængelige kommandoer:</div>
             <table style="width: 100%; color: #fff;">
-                <tr><td style="width:140px; color:var(--term-info)">cv</td><td>Downloader mit CV som PDF</td></tr>
                 <tr><td style="color:var(--term-info)">skills</td><td>Viser teknisk stak & kompetencer</td></tr>
                 <tr><td style="color:var(--term-info)">ai-team</td><td>Viser min agent-arkitektur</td></tr>
                 <tr><td style="color:var(--term-info)">philosophy</td><td>Min tilgang til ledelse</td></tr>
@@ -102,7 +101,7 @@
             <span style="color: var(--term-success)">RESULT: 100% facts-based output. Hallucinations: 0%.</span>`),
         'philosophy': () => printText(`"Leadership is about playing your team good. A leader with poor employees is simply a poor leader."`, "info"),
         'coffee-status': () => printHTML(`Machine: <span style="color: var(--term-success)">OK</span>. | Beans: Dark Roast. | Logic: Enabled.`),
-        'contact': () => printHTML(`Email: <a href='mailto:supernielsen@mensa.dk' style='color:var(--term-info)'>supernielsen@mensa.dk</a><br>LinkedIn: <a href='https://www.linkedin.com/in/patrick-mosskov-nielsen-3652662a3/' target='_blank' rel='noopener noreferrer' style='color:var(--term-info)'>Patrick Mosskov Nielsen</a>`),
+        'contact': () => printHTML(`Email: <a href='mailto:supernielsen@mensa.dk' style='color:var(--term-info)'>supernielsen@mensa.dk</a><br>LinkedIn: <a href='https://www.linkedin.com/in/patrickmosskovnielsen/' target='_blank' rel='noopener noreferrer' style='color:var(--term-info)'>Patrick Mosskov Nielsen</a>`),
         'cv': () => simulateLoading(),
         'clear': () => els.termOutput.innerHTML = "",
         'exit': () => toggleTerminal(false),
